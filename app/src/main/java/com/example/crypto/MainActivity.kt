@@ -7,6 +7,7 @@ import android.provider.AlarmClock.EXTRA_MESSAGE
 import android.view.View
 import android.widget.EditText
 
+//Screen 1
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
