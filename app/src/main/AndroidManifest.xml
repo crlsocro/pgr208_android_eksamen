@@ -9,10 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Crypto">
-        <activity android:name=".TransactionsActivity"></activity>
-        <activity android:name=".SellActivity" />
-        <activity android:name=".BuyActivity" />
-        <activity android:name=".BuySellActivity" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,6 +19,10 @@
         </activity>
         <activity android:name=".CryptoActivity" />
         <activity android:name=".CryptoListActivity" />
+        <activity android:name=".TransactionsActivity"></activity>
+        <activity android:name=".SellActivity" />
+        <activity android:name=".BuyActivity" />
+        <activity android:name=".BuySellActivity" />
     </application>
 
 </manifest>

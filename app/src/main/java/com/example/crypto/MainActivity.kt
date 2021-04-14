@@ -1,11 +1,10 @@
 package com.example.crypto
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.AlarmClock.EXTRA_MESSAGE
+import android.os.CountDownTimer
 import android.view.View
-import android.widget.EditText
+import androidx.appcompat.app.AppCompatActivity
 
 //Screen 1
 class MainActivity : AppCompatActivity() {
@@ -14,9 +13,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        object : CountDownTimer(300000, 1000) {
+
+            override fun onTick(millisUntilFinished: Long) {
+                //TODO:"Unødvendig method, men må vær her. Finn bedre timer metode"
+            }
+
+            override fun onFinish() {
+                nextScreen()
+            }
+        }.start()
     }
 
-    fun sendMessage(view: View) {
+    fun nextScreen() {
         val intent = Intent(this, CryptoActivity::class.java).apply {
 
         }
