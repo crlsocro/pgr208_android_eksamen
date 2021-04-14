@@ -14,10 +14,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        object : CountDownTimer(300000, 1000) {
+        object : CountDownTimer(3000, 1000) {
 
             override fun onTick(millisUntilFinished: Long) {
-                //Unødvendig method, men må vær her. Finn bedre måte
+                //TODO: Unødvendig method, men må vær her. Finn bedre måte
                 print("Hello");
             }
 
