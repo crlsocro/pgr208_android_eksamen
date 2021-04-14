@@ -3,6 +3,7 @@ package com.example.crypto
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.os.Debug
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
 
             override fun onTick(millisUntilFinished: Long) {
                 //Unødvendig method, men må vær her. Finn bedre måte
+                print("Hello");
             }
 
             override fun onFinish() {
