@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         object : CountDownTimer(300000, 1000) {
 
             override fun onTick(millisUntilFinished: Long) {
-                //TODO:"Unødvendig method, men må vær her. Finn bedre timer metode"
+                //Unødvendig method, men må vær her. Finn bedre måte
             }
 
             override fun onFinish() {
