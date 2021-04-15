@@ -3,8 +3,6 @@ package com.example.crypto
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.os.Debug
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 
 //Screen 1
@@ -28,7 +26,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun nextScreen() {
-        val intent = Intent(this, CryptoActivity::class.java).apply {
+        val intent = Intent(this, CryptoListActivity::class.java).apply {
 
         }
         startActivity(intent)
