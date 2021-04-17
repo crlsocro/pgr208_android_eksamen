@@ -14,6 +14,7 @@ interface TransactionDAO {
     @Delete
     fun delete(transaction: Transaction)
 
+    //Please fix this shit
     @Query("SELECT * FROM Transaction")
     fun getAllTransactions(): LiveData<List<Transaction>>
 
