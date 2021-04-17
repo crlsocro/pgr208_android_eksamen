@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">ExamGangGang</string>
     <string name="points">Points 10.000 USD</string>
+    <string name="portfolio_desc">Your total points are the sum of all your cryptocurrencies in USD</string>
+    <string name="btn_screen3">Transactions</string>
 </resources>
