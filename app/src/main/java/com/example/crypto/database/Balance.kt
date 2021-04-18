@@ -1,12 +1,16 @@
 package com.example.crypto.database
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity
+@Entity(tableName = "balance_table")
 data class Balance(
-    @PrimaryKey(autoGenerate = true) val balanceID: Int,
-    val currency: String?,
-    val amount: Float?,
-    val totalWorth: Float?
+        @PrimaryKey(autoGenerate = true)
+        @ColumnInfo(name = "id")
+        val id: Long = 0,
+        @ColumnInfo(name = "name")
+        val name: String,
+        @ColumnInfo(name = "course")
+        val course: String
 )

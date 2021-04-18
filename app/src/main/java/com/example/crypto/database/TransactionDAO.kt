@@ -15,7 +15,7 @@ interface TransactionDAO {
     fun delete(transaction: Transaction)
 
     //Please fix this shit
-    @Query("SELECT * FROM Transaction")
+    @Query("SELECT * FROM transaction_table")
     fun getAllTransactions(): LiveData<List<Transaction>>
 
 
