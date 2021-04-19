@@ -15,7 +15,7 @@ interface BalanceDAO {
     fun delete(balance: Balance)
 
     @Query("SELECT * FROM balance_table")
-    fun getAllBalances(): LiveData<List<Balance>>
+    fun getAllBalances(): List<Balance>
 
 
 

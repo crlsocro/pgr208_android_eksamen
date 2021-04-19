@@ -1,6 +1,5 @@
 package com.example.crypto.database
 
-import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -8,6 +7,6 @@ import androidx.room.PrimaryKey
 data class Balance(
         @PrimaryKey(autoGenerate = true) val balanceID: Int,
         val currency: String?,
-        val amount: Float?,
-        val totalWorth: Float?
+        val amount: Double,
+        val totalWorth: Double
 )
