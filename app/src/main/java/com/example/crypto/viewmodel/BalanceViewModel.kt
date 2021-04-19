@@ -18,10 +18,10 @@ class BalanceViewModel(context: Context) : ViewModel() {
     //TODO change test to the name we use to insert or read from database
     //Change both instances of "test"
     //Bruk addCryptoBalance for å legge til i databasen
-    fun addCryptoBalance (test: Balance){
+    fun addCryptoBalance (testB: Balance){
         viewModelScope.launch {
             withContext(Dispatchers.IO){
-                balanceDAO.addBalance(test)
+                balanceDAO.addBalance(testB)
             }
         }
     }

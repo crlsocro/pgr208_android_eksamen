@@ -14,11 +14,11 @@ class TransactionViewModel(context: Context) : ViewModel() {
 
     //TODO change test to the name we use to insert or read from database
     //Change both instances of "test"
-    //Bruk addCryptoBalance for å legge til i databasen
-    fun addCryptoBalance (test: Transaction){
+    //Bruk addCryptoTransaction for å legge til i databasen
+    fun addCryptoTransaction (testT: Transaction){
         viewModelScope.launch {
             withContext(Dispatchers.IO){
-                transactionDAO.addTransaction(test)
+                transactionDAO.addTransaction(testT)
             }
         }
     }

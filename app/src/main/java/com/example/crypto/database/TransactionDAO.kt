@@ -16,7 +16,7 @@ interface TransactionDAO {
 
     //Please fix this shit
     @Query("SELECT * FROM transaction_table")
-    fun getAllTransactions(): LiveData<List<Transaction>>
+    fun getAllTransactions(): List<Transaction>
 
 
 
