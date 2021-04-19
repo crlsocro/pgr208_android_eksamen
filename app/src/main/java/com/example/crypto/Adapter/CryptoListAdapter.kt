@@ -10,7 +10,7 @@ import com.example.crypto.databinding.ItemCryptoViewBinding
 class CryptoListAdapter(private var list: List<CryptoStats>) : RecyclerView.Adapter<CryptoListAdapter.CryptoViewHolder>()
 {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CryptoViewHolder {
-        val binding =  ItemCryptoViewBinding.inflate(LayoutInflater.from(parent.context))
+        val binding = ItemCryptoViewBinding.inflate(LayoutInflater.from(parent.context))
         return CryptoViewHolder(binding)
     }
 
