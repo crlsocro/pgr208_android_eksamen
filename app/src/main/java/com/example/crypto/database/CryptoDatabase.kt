@@ -30,6 +30,8 @@ abstract class CryptoDatabase : RoomDatabase(){
                    context.applicationContext,
                        CryptoDatabase::class.java,
                    DB_FILENAME)
+                   //TODO finish transactionviewmodel so we can delete .allowMainThread
+                       //Veryvery bad to havew this shitty line under me dawg, no wha im saying? no cap
                        .allowMainThreadQueries()
                    .fallbackToDestructiveMigration()
                    .build()
