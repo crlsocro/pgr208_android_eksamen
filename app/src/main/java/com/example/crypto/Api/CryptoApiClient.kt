@@ -16,7 +16,7 @@ class CryptoApiClient {
                 GsonConverterFactory.create()
             )
             .addConverterFactory(GsonConverterFactory.create(gson))
-            .baseUrl("https://api.coincap.io/v2/")
+            .baseUrl("https://api.coincap.io/")
             .build()
 
         cryptoApi = retrofit.create(CryptoApi::class.java)
@@ -27,8 +27,8 @@ class CryptoApiClient {
         try {
             if(response.isSuccessful) {
                 response.body()?.CryptoN?.let { cryptoN ->
-                    return cryptoN
                     println("ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss")
+                    return cryptoN
                 }
             }
         }

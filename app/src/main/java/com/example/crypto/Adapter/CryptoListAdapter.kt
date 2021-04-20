@@ -24,7 +24,7 @@ class CryptoListAdapter(private var list: List<CryptoStats>) : RecyclerView.Adap
     class CryptoViewHolder(private val binding: ItemCryptoViewBinding) : RecyclerView.ViewHolder(binding.root)
     {
         fun bind(stats: CryptoStats) {
-            binding.textViewCryptoCases.text  = "${stats.id}"
+            binding.textViewCryptoCases.text  = "${stats.CryptoN}"
             binding.textViewCryptoCases.text  = "${stats.symbol}"
             binding.textViewCryptoName.text  = "${stats.name}"
             binding.textViewCryptoCases.text  = "${stats.rank}"
