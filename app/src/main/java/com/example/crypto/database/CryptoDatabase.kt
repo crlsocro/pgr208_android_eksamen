@@ -30,6 +30,8 @@ abstract class CryptoDatabase : RoomDatabase(){
                    context.applicationContext,
                        CryptoDatabase::class.java,
                    DB_FILENAME)
+                   //TODO ADDED BACK ALLOWMAINTHREAD BECAUSE THIS BITCH DONT WORK WITHOUT IT
+                   .allowMainThreadQueries()
                    .fallbackToDestructiveMigration()
                    .build()
 
