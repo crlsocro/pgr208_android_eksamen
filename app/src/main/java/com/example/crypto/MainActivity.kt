@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
 
             override fun onFinish() {
                 nextScreen()
+                finish()
             }
         }.start()
     }
