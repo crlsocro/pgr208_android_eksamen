@@ -11,3 +11,5 @@ class BuyActivity : AppCompatActivity() {
         setContentView(R.layout.activity_buy)
     }
 }
+
+//TODO Buttons are only enabled when the user has enough crypto to buy/sell
