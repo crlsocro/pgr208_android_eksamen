@@ -4,6 +4,6 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 interface CryptoApi {
-    @GET("summary")
+    @GET("assets")
     fun getSummary(): Call<SummaryResponse>
 }
