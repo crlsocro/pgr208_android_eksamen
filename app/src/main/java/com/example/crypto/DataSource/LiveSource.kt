@@ -20,9 +20,10 @@ class LiveSource {
             cryptoN?.let {
                 for (i in 0 until cryptoN.length()){
                     list.add(CryptoStats(
+                        cryptoN.getJSONObject(i).getString("priceUsd"),
                         cryptoN.getJSONObject(i).getString("symbol"),
                         cryptoN.getJSONObject(i).getString("name"),
-                        cryptoN.getJSONObject(i).getString("priceUsd")
+                        cryptoN.getJSONObject(i).getString("explorer")
                     ))
                 }
             }
