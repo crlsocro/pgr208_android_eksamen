@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.crypto.Repo.CryptoStats
 import com.example.crypto.databinding.ItemCryptoViewBinding
 import com.squareup.picasso.Picasso
+import kotlin.math.roundToInt
+import kotlin.math.roundToLong
 
 
 class CryptoListAdapter(private var list: List<CryptoStats>) : RecyclerView.Adapter<CryptoListAdapter.CryptoViewHolder>()
@@ -28,8 +30,8 @@ class CryptoListAdapter(private var list: List<CryptoStats>) : RecyclerView.Adap
             Picasso.get().load("https://static.coincap.io/assets/icons/${stats.symbol?.toLowerCase()}@2x.png").into(binding.imageViewIcon)
             binding.textViewCryptoName.text  = "${stats.name}"
             binding.textViewCryptoSymbol.text = "${stats.symbol}"
-            binding.textViewCryptoPriceUsd.text  = "${stats.priceUsd}"
-            binding.textViewPercent.text = "${stats.changePercent24Hr}%"
+            binding.textViewCryptoPriceUsd.text  = "%.3f".format(stats.priceUsd?.toDouble())
+            binding.textViewPercent.text = "%.3f".format(stats.changePercent24Hr?.toDouble()) + "%"
 
         }
     }

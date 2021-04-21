@@ -10,7 +10,7 @@ import com.example.crypto.viewmodel.TransactionViewModel
 
 //Screen 7
 
-
+/*
 
 class TransactionsActivity : AppCompatActivity() {
 
@@ -26,3 +26,5 @@ class TransactionsActivity : AppCompatActivity() {
         binding2.recyclerView.adapter = listAdapter
     }
 }
+
+*/

@@ -8,6 +8,8 @@ import com.example.crypto.databinding.ItemCryptoViewBinding
 import com.example.crypto.databinding.ItemTransactionViewBinding
 import com.squareup.picasso.Picasso
 
+/*
+
 class TransactionsAdapter() : RecyclerView.Adapter<CryptoListAdapter.CryptoViewHolder>(){
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TransactionsAdapter.TransactionsViewHolder {
@@ -27,3 +29,5 @@ class TransactionsAdapter() : RecyclerView.Adapter<CryptoListAdapter.CryptoViewH
         }
     }
 }
+
+*/
