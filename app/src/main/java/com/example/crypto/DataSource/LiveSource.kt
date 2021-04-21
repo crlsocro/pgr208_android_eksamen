@@ -4,6 +4,7 @@ import com.example.crypto.Repo.CryptoStats
 import org.json.JSONObject
 import java.net.HttpURLConnection
 import java.net.URL
+import kotlin.math.round
 
 class LiveSource {
 

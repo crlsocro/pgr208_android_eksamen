@@ -29,7 +29,7 @@ class CryptoListAdapter(private var list: List<CryptoStats>) : RecyclerView.Adap
             binding.textViewCryptoName.text  = "${stats.name}"
             binding.textViewCryptoSymbol.text = "${stats.symbol}"
             binding.textViewCryptoPriceUsd.text  = "${stats.priceUsd}"
-            binding.textViewPercent.text = "${stats.changePercent24Hr}"
+            binding.textViewPercent.text = "${stats.changePercent24Hr}%"
 
         }
     }
