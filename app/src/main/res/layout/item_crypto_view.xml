@@ -22,7 +22,7 @@
         android:layout_marginLeft="0dp"
         android:layout_marginRight="10dp"
         android:layout_toRightOf="@+id/imageViewIcon"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textSize="15sp"
         android:textStyle="normal"
         tools:text="Name"/>
@@ -34,7 +34,7 @@
         android:layout_below="@+id/textViewCryptoName"
         android:layout_toRightOf="@+id/imageViewIcon"
         android:layout_centerVertical="true"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textSize="10sp"
         android:textStyle="normal"
         tools:text="Symbol" />
@@ -46,7 +46,7 @@
         android:layout_marginLeft="-42dp"
         android:layout_marginRight="10dp"
         android:layout_toRightOf="@id/textViewCryptoName"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textSize="18sp"
         android:textStyle="normal"
         tools:text="PriceUsd"/>
@@ -56,7 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/textViewCryptoPriceUsd"
         android:textSize="15sp"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textStyle="normal"
         tools:text="changePercent24Hr"/>
 
