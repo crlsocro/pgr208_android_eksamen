@@ -29,9 +29,8 @@ class CryptoApiClient {
 
         try {
             if(response.isSuccessful) {
-                response.body()?.CryptoN?.let { cryptoN ->
-                    return cryptoN
-
+                response.body()?.data?.let { data ->
+                    return data
                 }
             }
         }
