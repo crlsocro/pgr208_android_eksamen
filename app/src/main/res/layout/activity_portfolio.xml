@@ -22,8 +22,7 @@
             android:gravity="center"
             android:text="@string/points"
             android:textSize="18sp"
-            tools:text="points"
-            tools:textColor="@color/textWhite" />
+            android:textColor="@color/textWhite" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -56,7 +55,7 @@
             android:gravity="center"
 
             tools:text="@string/portfolio_desc"
-            tools:textColor="@color/textWhite"/>
+            android:textColor="@color/textWhite"/>
     </FrameLayout>
 
     <Button
@@ -70,6 +69,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-        tools:text="@string/btn_screen3" />
+        android:text="@string/btn_screen3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

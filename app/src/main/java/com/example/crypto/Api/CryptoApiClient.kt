@@ -7,7 +7,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class CryptoApiClient {
+
     private var cryptoApi: CryptoApi
+
     init {
         val gson = GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ss").create()
 
@@ -16,19 +18,20 @@ class CryptoApiClient {
                 GsonConverterFactory.create()
             )
             .addConverterFactory(GsonConverterFactory.create(gson))
-            .baseUrl("https://api.coincap.io/")
+            .baseUrl("https://api.coincap.io/v2/")
             .build()
 
         cryptoApi = retrofit.create(CryptoApi::class.java)
     }
     fun getSummary(): List<CryptoStats> {
+
         var response = cryptoApi.getSummary().execute()
 
         try {
             if(response.isSuccessful) {
                 response.body()?.CryptoN?.let { cryptoN ->
-                    println("ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss")
                     return cryptoN
+
                 }
             }
         }

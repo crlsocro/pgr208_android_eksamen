@@ -9,11 +9,16 @@
     android:background="@color/darkGray">
 
     <androidx.recyclerview.widget.RecyclerView
-        tools:listitem="@layout/item_crypto_view"
-        android:layout_margin="8dp"
         android:id="@+id/recyclerView"
         android:layout_width="413dp"
         android:layout_height="680dp"
+        android:layout_margin="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:listitem="@layout/item_crypto_view"
+        android:textColor="@color/textWhite" />
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,7 +44,7 @@
 
         <TextView
             android:id="@+id/textView3"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"

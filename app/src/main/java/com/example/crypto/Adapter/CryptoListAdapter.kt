@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.crypto.Repo.CryptoStats
 import com.example.crypto.databinding.ItemCryptoViewBinding
+import com.squareup.picasso.Picasso
 
 
 class CryptoListAdapter(private var list: List<CryptoStats>) : RecyclerView.Adapter<CryptoListAdapter.CryptoViewHolder>()
@@ -24,10 +25,9 @@ class CryptoListAdapter(private var list: List<CryptoStats>) : RecyclerView.Adap
     class CryptoViewHolder(private val binding: ItemCryptoViewBinding) : RecyclerView.ViewHolder(binding.root)
     {
         fun bind(stats: CryptoStats) {
-            binding.textViewCryptoCases.text  = "${stats.CryptoN}"
-            binding.textViewCryptoCases.text  = "${stats.symbol}"
+            Picasso.get().load("https://static.coincap.io/assets/icons/${stats.symbol}@2x.png").into(binding.imageViewIcon);
             binding.textViewCryptoName.text  = "${stats.name}"
-            binding.textViewCryptoCases.text  = "${stats.rank}"
+            binding.textViewCryptoCases.text  = "${stats.priceUsd}"
 
         }
     }

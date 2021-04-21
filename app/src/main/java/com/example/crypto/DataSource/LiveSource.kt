@@ -9,22 +9,20 @@ class LiveSource {
 
 
     fun getSummary() : List<CryptoStats> {
-        val list = ArrayList<CryptoStats>()
 
+        val list = ArrayList<CryptoStats>()
         var response = get("https://api.coincap.io/v2/assets")
 
         if(response.isSuccessful) {
-            var cryptoN = JSONObject(response.body).optJSONArray("Data")
+            var cryptoN = JSONObject(response.body).optJSONArray("data")
+
             cryptoN?.let {
                 for (i in 0 until cryptoN.length()){
-                    list.add(
-                        CryptoStats(
-                            cryptoN.getJSONObject(i).getString("id"),
-                            cryptoN.getJSONObject(i).getInt("rank"),
-                            cryptoN.getJSONObject(i).getString("symbol"),
-                            cryptoN.getJSONObject(i).getString("name"),
-                            cryptoN.getJSONObject(i).getInt("priceUsd").toDouble()
-                        ))
+                    list.add(CryptoStats(
+                        cryptoN.getJSONObject(i).getString("symbol"),
+                        cryptoN.getJSONObject(i).getString("name"),
+                        cryptoN.getJSONObject(i).getDouble("priceUsd").toDouble()
+                    ))
                 }
             }
         }

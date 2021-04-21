@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.crypto"
-        minSdkVersion 26
+        minSdkVersion 24
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -51,6 +51,8 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.0"
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.7.1'
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

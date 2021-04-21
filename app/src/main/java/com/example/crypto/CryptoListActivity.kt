@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.crypto.Adapter.CryptoListAdapter
 import com.example.crypto.Repo.CryptoStats
@@ -19,29 +18,25 @@ class CryptoListActivity : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        var binding = ActivityCryptoListBinding.inflate(layoutInflater)
+        var binding  = ActivityCryptoListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = listAdapter
 
-        viewModel.liveStats.observe(this) { newList->
+        viewModel.liveStats.observe(this,  { newList->
             listAdapter.update(newList)
-        }
+        })
 
-        viewModel.isLoading.observe(this,){loading ->
+        viewModel.isLoading.observe(this, {loading ->
             binding.progressBar.visibility = if(loading) View.VISIBLE else View.INVISIBLE
-        }
+        })
 
     }
 
     override fun onResume() {
         super.onResume()
         viewModel.refresh()
-    }
-
-    fun toPortfolio(){
-
     }
 
     fun toPortfolio(view: View) {
