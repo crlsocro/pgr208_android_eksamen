@@ -8,7 +8,7 @@ class CryptoRepo {
     private val liveSource  = LiveSource()
     private val cryptoApiClient = CryptoApiClient()
 
-    suspend fun getCryptoSummary() : List<CryptoStats>  {
+    fun getCryptoSummary() : List<CryptoStats>  {
         var list  = cryptoApiClient.getSummary()
         return list.sortedByDescending { it.priceUsd }
     }
