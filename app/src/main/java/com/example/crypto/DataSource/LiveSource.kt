@@ -20,8 +20,7 @@ class LiveSource {
                 for (i in 0 until cryptoN.length()){
                     list.add(CryptoStats(
                         cryptoN.getJSONObject(i).getString("symbol"),
-                        cryptoN.getJSONObject(i).getString("name"),
-                        cryptoN.getJSONObject(i).getDouble("priceUsd").toDouble()
+                        cryptoN.getJSONObject(i).getString("name")
                     ))
                 }
             }
