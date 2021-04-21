@@ -10,7 +10,7 @@ class CryptoRepo {
 
     suspend fun getCryptoSummary() : List<CryptoStats>  {
         var list  = cryptoApiClient.getSummary()
-        return list.sortedByDescending {it.priceUsd}
+        return list.sortedByDescending { it.priceUsd }
     }
 
 }
