@@ -46,23 +46,14 @@ class CryptoListAdapter(private var list: List<CryptoStats>) : RecyclerView.Adap
             binding.root.setOnClickListener{
                 println("test")
                 val intent = Intent(binding.root.context, BuySellActivity::class.java)
-                //intent.putExtra(Intent.EXTRA_TEXT, "${stats.symbol}")
-                //intent.putExtra(Intent.EXTRA_TEXT, "${stats.priceUsd}.toDouble()")
                 intent.putExtra("symbol", "${stats.symbol}")
                 intent.putExtra("price","$" + "%.3f".format(stats.priceUsd?.toDouble()))
                 intent.putExtra("name", "${stats.name}")
-               // intent.putExtra("icon", "Picasso.get().load(\"https://static.coincap.io/assets/icons/${stats.symbol?.toLowerCase()}@2x.png\").into(binding.imageViewIcon)")
                 binding.root.context.startActivity(intent)
 
 
             }
         }
-
-        fun sendExtras(stats: CryptoStats) {
-            //TODO set extras her som sett i https://developer.android.com/training/sharing/send rundt send multiple blablabla
-
-        }
-
     }
 
     fun update(newList: List<CryptoStats>){
