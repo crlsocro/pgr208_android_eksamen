@@ -20,10 +20,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".CryptoListActivity" />
-        <activity android:name=".PortfolioActivity" />
+        <activity android:name=".BuyActivity" />
         <activity android:name=".TransactionsActivity"></activity>
         <activity android:name=".SellActivity" />
-        <activity android:name=".BuyActivity" />
+        <activity android:name=".PortfolioActivity" />
         <activity android:name=".BuySellActivity" />
     </application>
 

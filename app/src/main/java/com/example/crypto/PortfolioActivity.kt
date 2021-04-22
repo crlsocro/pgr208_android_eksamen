@@ -46,6 +46,8 @@ class PortfolioActivity : AppCompatActivity() {
 
     }
 
+
+
     fun testDatabase(view: View){
         var testB = Balance(0, "btc", 01.000, 50000.000)
         viewModelB.addCryptoBalance(testB)

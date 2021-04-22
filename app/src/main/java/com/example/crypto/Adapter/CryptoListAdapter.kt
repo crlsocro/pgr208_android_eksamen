@@ -1,8 +1,13 @@
 package com.example.crypto.Adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.example.crypto.BuySellActivity
+import com.example.crypto.PortfolioActivity
+import com.example.crypto.R
 import com.example.crypto.Repo.CryptoStats
 import com.example.crypto.databinding.ItemCryptoViewBinding
 import com.squareup.picasso.Picasso
@@ -26,13 +31,23 @@ class CryptoListAdapter(private var list: List<CryptoStats>) : RecyclerView.Adap
 
     class CryptoViewHolder(private val binding: ItemCryptoViewBinding) : RecyclerView.ViewHolder(binding.root)
     {
+        init {
+
+        }
         fun bind(stats: CryptoStats) {
             Picasso.get().load("https://static.coincap.io/assets/icons/${stats.symbol?.toLowerCase()}@2x.png").into(binding.imageViewIcon)
             binding.textViewCryptoName.text  = "${stats.name}"
             binding.textViewCryptoSymbol.text = "${stats.symbol}"
             binding.textViewCryptoPriceUsd.text  ="$" + "%.3f".format(stats.priceUsd?.toDouble())
             binding.textViewPercent.text = "%.3f".format(stats.changePercent24Hr?.toDouble()) + "%"
-
+            binding.root.setOnClickListener{
+                println("test")
+                val intent = Intent(binding.root.context, BuySellActivity::class.java).apply {}
+                intent.putExtra(Intent.EXTRA_TEXT, "${stats.symbol}")
+                intent.putExtra(Intent.EXTRA_TEXT, "${stats.priceUsd}.toDouble()")
+                intent.putExtra(Intent.EXTRA_TEXT, "${stats.name}")
+                binding.root.context.startActivity(intent)
+            }
         }
     }
 
