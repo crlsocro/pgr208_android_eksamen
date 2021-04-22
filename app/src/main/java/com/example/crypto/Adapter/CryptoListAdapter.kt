@@ -36,9 +36,9 @@ class CryptoListAdapter(private var list: List<CryptoStats>) : RecyclerView.Adap
         }
         fun bind(stats: CryptoStats) {
             Picasso.get().load("https://static.coincap.io/assets/icons/${stats.symbol?.toLowerCase()}@2x.png").into(binding.imageViewIcon)
+            binding.textViewCryptoPriceUsd.text  ="$" + "%.3f".format(stats.priceUsd?.toDouble())
             binding.textViewCryptoName.text  = "${stats.name}"
             binding.textViewCryptoSymbol.text = "${stats.symbol}"
-            binding.textViewCryptoPriceUsd.text  ="$" + "%.3f".format(stats.priceUsd?.toDouble())
             binding.textViewPercent.text = "%.3f".format(stats.changePercent24Hr?.toDouble()) + "%"
             binding.root.setOnClickListener{
                 println("test")

@@ -11,5 +11,6 @@ data class CryptoStats(
     var volumeUsd24Hr: String?= null,
     var priceUsd: String?= null,
     var changePercent24Hr: String?= null,
-    var vwap24Hr: String?=null
+    var vwap24Hr: String?=null,
+    var explorer: String?=null
 )
