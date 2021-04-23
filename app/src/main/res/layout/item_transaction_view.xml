@@ -1,46 +1,51 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:foreground="?android:attr/selectableItemBackground"
-    android:paddingTop="16dp"
-    android:paddingBottom="16dp"
+<LinearLayout
+    android:padding="16dp"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-    <ImageView
-        android:layout_marginLeft="12dp"
-        android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
-        android:id="@+id/imageViewIconTransaction"
-        android:layout_width="32dp"
-        android:layout_height="32dp">
-    </ImageView>
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
-        android:layout_marginLeft="16dp"
-        android:layout_toRightOf="@+id/imageViewIconTransaction"
-        android:textSize="20sp"
-        android:textStyle="normal"
-        android:textColor="@android:color/black"
-        android:layout_centerVertical="true"
-        tools:text ="000000"
-        android:id="@+id/textViewPrice"
-        android:layout_width="116dp"
-        android:layout_height="wrap_content">
-    </TextView>
-
-    <TextView
-        android:textSize="20sp"
-        android:textColor="@android:color/black"
-        android:textStyle="normal"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="4dp"
-        android:layout_toRightOf="@+id/textViewPrice"
-        android:layout_centerVertical="true"
-        android:id="@+id/textViewCryptoNameTransaction"
-        android:ellipsize="end"
-        android:text ="Crypto Name"
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:textStyle="bold"
+        android:id="@+id/textViewTransactionIDT"
+    />
 
-</RelativeLayout>
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textStyle="italic"
+        android:id="@+id/textViewCryptoNameT"
+        android:textSize="10sp"
+        android:layout_marginTop="5dp"
+    />
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textStyle="italic"
+        android:id="@+id/textViewAmountT"
+        android:textSize="10sp"
+        android:layout_marginTop="5dp"
+        />
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textStyle="italic"
+        android:id="@+id/textViewPriceT"
+        android:textSize="10sp"
+        android:layout_marginTop="5dp"
+        />
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textStyle="italic"
+        android:id="@+id/textViewTransactionTypeT"
+        android:textSize="10sp"
+        android:layout_marginTop="5dp"
+        />
+
+</LinearLayout>

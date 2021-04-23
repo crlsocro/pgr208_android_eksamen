@@ -2,16 +2,9 @@ package com.example.crypto
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.View
-import android.widget.TextView
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.crypto.database.Balance
-import com.example.crypto.database.Transaction
-import com.example.crypto.databinding.ActivityCryptoListBinding
+import android.view.LayoutInflater
 import com.example.crypto.databinding.ActivityTransactionsBinding
-import com.example.crypto.viewmodel.MainViewModel
-import com.example.crypto.viewmodel.TransactionViewModel
+import com.example.crypto.fragment.TransactionsListFragment
 
 //Screen 7
 
@@ -24,12 +17,17 @@ class TransactionsActivity : AppCompatActivity() {
     private lateinit var viewModelT: TransactionViewModel
     private lateinit var viewModel : MainViewModel
     val price : TextView = findViewById(R.id.textViewPrice)*/
+    private lateinit var binding: ActivityTransactionsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_transactions)
+        binding = ActivityTransactionsBinding.inflate(LayoutInflater.from(this))
+        setContentView(binding.root)
 
-
+        supportFragmentManager
+            .beginTransaction()
+            .add(R.id.fragment_container, TransactionsListFragment.newInstance(), "TransactionFragment")
+            .commit()
 
     }
 

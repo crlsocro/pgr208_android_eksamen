@@ -26,17 +26,14 @@ abstract class CryptoDatabase : RoomDatabase(){
                return tmp
            }
            synchronized(this) {
-               val instance = Room.databaseBuilder(
-                   context.applicationContext,
-                       CryptoDatabase::class.java,
-                   DB_FILENAME)
-                   //TODO ADDED BACK ALLOWMAINTHREAD BECAUSE THIS BITCH DONT WORK WITHOUT IT
-                   .allowMainThreadQueries()
+               val instance =
+                   Room.databaseBuilder(context.applicationContext, CryptoDatabase::class.java, DB_FILENAME)
                    .fallbackToDestructiveMigration()
                    .build()
 
                INSTANCE = instance
-               return instance
+               //TODO INSTANCE = it might not work. check the DataBase.kt in gitbuh if this does not work
+               return instance.also { INSTANCE = it }
            }
        }
    }

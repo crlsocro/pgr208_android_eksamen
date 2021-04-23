@@ -14,9 +14,16 @@ interface TransactionDAO {
     @Delete
     fun delete(transaction: Transaction)
 
-    //Please fix this shit
+    //Read all transactions from database
     @Query("SELECT * FROM transaction_table")
     fun getAllTransactions(): List<Transaction>
+
+    //This is only here so we can copy it for balance
+    //the symbol thing is the "btc" tingen.
+    //TODO Change ID to symbol here. Currently in here for testing
+    //TODO change funtion name, funtion type, function parameter, function parameter type
+    @Query("select * from transaction_table where transactionID = :transactionID")
+    suspend fun getBalancewithSymbol(transactionID: Long): Transaction
 
 
 

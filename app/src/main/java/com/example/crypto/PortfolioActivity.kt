@@ -39,7 +39,7 @@ class PortfolioActivity : AppCompatActivity() {
 
         viewModel.getBalances().observe(this) {
             with(binding) {
-                textViewPrice.setText("dsadsadas")
+                textViewPriceT.setText("dsadsadas")
             }
         }
 
