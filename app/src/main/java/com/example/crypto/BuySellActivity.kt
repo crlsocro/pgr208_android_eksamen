@@ -9,8 +9,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.example.crypto.Adapter.CryptoListAdapter
 import com.squareup.picasso.Picasso
-import java.lang.reflect.Array.getInt
-import java.util.jar.Attributes
+
+import com.anychart.AnyChart
+import com.anychart.AnyChartView
+import com.anychart.chart.common.dataentry.DataEntry
+import com.anychart.chart.common.dataentry.ValueDataEntry
+import com.anychart.charts.Cartesian
+import java.util.ArrayList
 
 //Screen 4
 
@@ -18,6 +23,10 @@ class BuySellActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_buy_sell)
+
+       // setSupportActionBar(findViewById(R.id.toolbar))
+
+        drawSinGraph();
 
             var intent = intent
             val symbol = intent.getStringExtra("symbol")
@@ -32,6 +41,8 @@ class BuySellActivity : AppCompatActivity() {
             textViewName.text = name
             Picasso.get().load("https://static.coincap.io/assets/icons/${symbol?.toLowerCase()}@2x.png").into(imageView)
 
+
+        //Declaration for buttons on screen 4
         var btnBuy = findViewById<Button>(R.id.btnBuy)
         var btnSell = findViewById<Button>(R.id.btnSell)
 
@@ -50,5 +61,24 @@ class BuySellActivity : AppCompatActivity() {
             i.putExtra("name", intent.getStringExtra("name"))
             startActivity(i)
         }
+    }
+    private fun drawSinGraph() {
+
+        var series: ArrayList<DataEntry> = ArrayList()
+
+        for ( angle in 0..360 ) {
+
+            var radian = Math.toRadians( angle.toDouble())
+            series.add( ValueDataEntry( /* x-axis */ angle , /* y-axis */ Math.sin(radian) ) )
+        }
+
+        // Step 2 assign series to AnyChart column (Data Structure of library)
+        val cartesian: Cartesian = AnyChart.column()
+        cartesian.column(series) // set your
+
+        // Step 3 assign column to chartview
+        val chartView = findViewById<AnyChartView>(R.id.chartView)
+        chartView.setChart(cartesian)
+        
     }
 }
