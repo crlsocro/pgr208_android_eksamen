@@ -19,10 +19,12 @@ class BuyActivity : AppCompatActivity() {
         setContentView(com.example.crypto.R.layout.activity_buy)
 
         var btn : Button = findViewById(com.example.crypto.R.id.buyButton)
-        btn.isEnabled = true
+        btn.isEnabled = false
 
-        var usdEdit : EditText = findViewById(com.example.crypto.R.id.editTextUSD) as EditText
-        //if (usdEdit.getText().toInt() > 5)
+        var usdEdit : EditText = findViewById<EditText>(com.example.crypto.R.id.editTextUSD)
+        if (Integer.parseInt(usdEdit.text.toString()) > 5 || usdEdit.text.toString() == ""){
+            btn.isEnabled = true
+        }
 
         var intent = intent
         val symbol = intent.getStringExtra("symbol")

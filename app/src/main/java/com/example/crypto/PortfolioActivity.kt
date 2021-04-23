@@ -1,5 +1,6 @@
 package com.example.crypto
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -71,6 +72,14 @@ class PortfolioActivity : AppCompatActivity() {
             }
         })
 
+    }
+
+
+    fun toTransactions(view: View) {
+        val intent = Intent(this, TransactionsActivity::class.java).apply {
+
+        }
+        startActivity(intent)
     }
 
 }

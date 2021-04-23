@@ -14,7 +14,7 @@ class SellActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sell)
 
-        var btn : Button = findViewById(com.example.crypto.R.id.sellButton)
+        var btn : Button = findViewById(R.id.sellButton)
         btn.isEnabled = false
 
         var intent = intent
