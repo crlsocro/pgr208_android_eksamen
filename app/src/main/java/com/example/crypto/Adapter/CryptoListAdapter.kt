@@ -50,8 +50,6 @@ class CryptoListAdapter(private var list: List<CryptoStats>) : RecyclerView.Adap
                 intent.putExtra("price","$" + "%.3f".format(stats.priceUsd?.toDouble()))
                 intent.putExtra("name", "${stats.name}")
                 binding.root.context.startActivity(intent)
-
-
             }
         }
     }
