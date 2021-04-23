@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.crypto.Adapter.CryptoListAdapter
@@ -31,19 +32,23 @@ class BuySellActivity : AppCompatActivity() {
             textViewName.text = name
             Picasso.get().load("https://static.coincap.io/assets/icons/${symbol?.toLowerCase()}@2x.png").into(imageView)
 
+        var btnBuy = findViewById<Button>(R.id.btnBuy)
+        var btnSell = findViewById<Button>(R.id.btnSell)
 
-    }
-
-    fun toBuyActivity(view: View) {
-        val intent = Intent(this,BuyActivity::class.java).apply {
+        btnBuy.setOnClickListener {
+            val i = Intent(this, BuyActivity::class.java)
+            i.putExtra("symbol", intent.getStringExtra("symbol"))
+            i.putExtra("price", intent.getStringExtra("price"))
+            i.putExtra("name", intent.getStringExtra("name"))
+            startActivity(i)
         }
-        startActivity(intent)
-    }
 
-    fun toSellActivity(view: View) {
-        val intent = Intent(this,SellActivity::class.java).apply {
-
+        btnSell.setOnClickListener {
+            val i = Intent(this, SellActivity::class.java)
+            i.putExtra("symbol", intent.getStringExtra("symbol"))
+            i.putExtra("price", intent.getStringExtra("price"))
+            i.putExtra("name", intent.getStringExtra("name"))
+            startActivity(i)
         }
-        startActivity(intent)
     }
 }

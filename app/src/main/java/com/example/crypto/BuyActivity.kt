@@ -23,6 +23,7 @@ class BuyActivity : AppCompatActivity() {
 
         var usdEdit : EditText = findViewById(com.example.crypto.R.id.editTextUSD) as EditText
         //if (usdEdit.getText().toInt() > 5)
+
         var intent = intent
         val symbol = intent.getStringExtra("symbol")
         val price = intent.getStringExtra("price")
