@@ -13,6 +13,9 @@ import com.example.crypto.viewmodel.LoadingViewModel
 //Screen 2
 class CryptoListActivity : AppCompatActivity(){
 
+    //TODO change the activity to go to in toPortfolio, should be portfolioActivity
+    //Was changed during testing
+
     private var listAdapter = CryptoListAdapter(ArrayList<CryptoStats>())
     private val viewModel = LoadingViewModel()
 
@@ -40,7 +43,7 @@ class CryptoListActivity : AppCompatActivity(){
     }
 
     fun toPortfolio(view: View) {
-        val intent = Intent(this, PortfolioActivity::class.java).apply {
+        val intent = Intent(this, TransactionsActivity::class.java).apply {
 
         }
         startActivity(intent)
