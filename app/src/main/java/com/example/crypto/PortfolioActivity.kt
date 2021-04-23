@@ -6,9 +6,11 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.map
+import androidx.lifecycle.observe
 import com.example.crypto.database.Balance
 import com.example.crypto.database.CryptoDatabase
 import com.example.crypto.database.Transaction
+import com.example.crypto.databinding.ItemTransactionViewBinding
 import com.example.crypto.viewmodel.BalanceViewModel
 import com.example.crypto.viewmodel.MainViewModel
 import com.example.crypto.viewmodel.TransactionViewModel
@@ -19,6 +21,8 @@ class PortfolioActivity : AppCompatActivity() {
     private lateinit var viewModelB: BalanceViewModel
     private lateinit var viewModelT: TransactionViewModel
     private lateinit var viewModel : MainViewModel
+
+    private lateinit var binding: ItemTransactionViewBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,17 +37,17 @@ class PortfolioActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        viewModel.getBalances().observe(this, { list->
-            list.map {entity->
-                Log.d(this.javaClass.simpleName, entity.toString())
+        viewModel.getBalances().observe(this) {
+            with(binding) {
+                textViewPrice.setText("dsadsadas")
             }
-        })
+        }
 
-        viewModel.getTransactions().observe(this, { list->
+        viewModel.getTransactions().observe(this) { list->
             list.map {entity->
                 Log.d(this.javaClass.simpleName, entity.toString())
             }
-        })
+        }
 
     }
 
