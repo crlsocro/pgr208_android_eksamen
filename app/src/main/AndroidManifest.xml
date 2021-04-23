@@ -21,7 +21,7 @@
         </activity>
         <activity android:name=".CryptoListActivity" />
         <activity android:name=".BuyActivity" />
-        <activity android:name=".TransactionsActivity"></activity>
+        <activity android:name=".TransactionsActivity" />
         <activity android:name=".SellActivity" />
         <activity android:name=".PortfolioActivity" />
         <activity android:name=".BuySellActivity" />

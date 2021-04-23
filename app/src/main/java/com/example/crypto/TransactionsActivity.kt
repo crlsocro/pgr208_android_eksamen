@@ -20,10 +20,10 @@ import com.example.crypto.viewmodel.TransactionViewModel
 class TransactionsActivity : AppCompatActivity() {
 
 
-
+    /*
     private lateinit var viewModelT: TransactionViewModel
     private lateinit var viewModel : MainViewModel
-    val price : TextView = findViewById(R.id.textViewPrice)
+    val price : TextView = findViewById(R.id.textViewPrice)*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +33,7 @@ class TransactionsActivity : AppCompatActivity() {
 
     }
 
+    /*
     fun testDatabase(view: View){
 
 
@@ -56,6 +57,6 @@ class TransactionsActivity : AppCompatActivity() {
             }
         })
 
-    }
+    }*/
 }
 
