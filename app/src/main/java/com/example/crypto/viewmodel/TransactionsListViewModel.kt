@@ -30,7 +30,7 @@ class TransactionsListViewModel : ViewModel() {
     private fun getData() {
         viewModelScope.launch {
             withContext(Dispatchers.IO){
-            _transactionsListLiveData.value = transactionDAO.getAllTransactions()
+            _transactionsListLiveData.postValue(transactionDAO.getAllTransactions())
             }
         }
     }
