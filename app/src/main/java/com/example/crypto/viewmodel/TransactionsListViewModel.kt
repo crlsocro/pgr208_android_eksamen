@@ -8,7 +8,9 @@ import androidx.lifecycle.viewModelScope
 import com.example.crypto.database.CryptoDatabase
 import com.example.crypto.database.Transaction
 import com.example.crypto.database.TransactionDAO
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class TransactionsListViewModel : ViewModel() {
 
@@ -27,7 +29,9 @@ class TransactionsListViewModel : ViewModel() {
 
     private fun getData() {
         viewModelScope.launch {
+            withContext(Dispatchers.IO){
             _transactionsListLiveData.value = transactionDAO.getAllTransactions()
+            }
         }
     }
 }
