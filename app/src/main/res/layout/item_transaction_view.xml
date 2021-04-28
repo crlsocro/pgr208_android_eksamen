@@ -1,51 +1,88 @@
-<LinearLayout
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
     android:padding="16dp"
     android:orientation="vertical"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/darkGray">
 
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:textStyle="bold"
-        android:id="@+id/textViewTransactionIDT"
-    />
 
-    <TextView
-        android:layout_height="wrap_content"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:textStyle="italic"
-        android:id="@+id/textViewCryptoNameT"
-        android:textSize="10sp"
-        android:layout_marginTop="5dp"
-    />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="8dp">
 
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:textStyle="italic"
-        android:id="@+id/textViewAmountT"
-        android:textSize="10sp"
-        android:layout_marginTop="5dp"
-        />
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:textStyle="italic"
-        android:id="@+id/textViewPriceT"
-        android:textSize="10sp"
-        android:layout_marginTop="5dp"
-        />
+            <ImageView
+                android:id="@+id/imageViewIcon"
+                android:layout_width="82dp"
+                android:layout_height="82dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="7dp"
+                app:srcCompat="@drawable/btc"
+                tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:textStyle="italic"
-        android:id="@+id/textViewTransactionTypeT"
-        android:textSize="10sp"
-        android:layout_marginTop="5dp"
-        />
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewTransactionIDT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/textWhite" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:textStyle="italic"
+                android:id="@+id/textViewCryptoNameT"
+                android:textSize="10sp"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/textWhite" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:textStyle="italic"
+                android:id="@+id/textViewAmountT"
+                android:textSize="10sp"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/textWhite"
+                />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:textStyle="italic"
+                android:id="@+id/textViewPriceT"
+                android:textSize="10sp"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/textWhite"
+                />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:textStyle="italic"
+                android:id="@+id/textViewTransactionTypeT"
+                android:textSize="10sp"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/textWhite"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>
