@@ -9,6 +9,8 @@ import com.squareup.picasso.Picasso
 
 //Screen 6
 
+//TODO: When entering in the USD column, for example 3000, it should convert to the BTC value automatically.
+
 class SellActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

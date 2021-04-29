@@ -18,6 +18,10 @@ import com.example.crypto.viewmodel.TransactionViewModel
 //Screen 3
 class PortfolioActivity : AppCompatActivity() {
 
+    //TODO: Hente korrekt data når man har kjøpt forksjellige krypto
+    //TODO: Fix design
+    //TODO: Make a button work to go to Transactions
+
     private lateinit var viewModelB: BalanceViewModel
     private lateinit var viewModelT: TransactionViewModel
     private lateinit var viewModel : MainViewModel

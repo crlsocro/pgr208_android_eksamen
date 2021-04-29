@@ -19,6 +19,9 @@ import java.util.ArrayList
 
 //Screen 4
 
+
+//TODO: Fetch graph to be correct data from the assets endpoints
+
 class BuySellActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

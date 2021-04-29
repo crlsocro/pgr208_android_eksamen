@@ -15,6 +15,10 @@ class CryptoListActivity : AppCompatActivity(){
 
     //TODO change the activity to go to in toPortfolio, should be portfolioActivity
     //Was changed during testing
+    //TODO: User points are calculated by finding the sum of the value( in dollars) of all currencies the user has.
+//      Recent conversion rates are used for each cryptocurrency to find its value in dollars
+
+
 
     private var listAdapter = CryptoListAdapter(ArrayList<CryptoStats>())
     private val viewModel = LoadingViewModel()

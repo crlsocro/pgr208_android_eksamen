@@ -17,6 +17,8 @@ import com.squareup.picasso.Picasso
 
 //Screen 5
 
+//TODO: When entering in the USD column, for example 3000, it should convert to the BTC value automatically.
+
 class BuyActivity : AppCompatActivity() {
 
     private lateinit var viewModelT: TransactionViewModel
