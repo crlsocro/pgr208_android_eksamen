@@ -30,6 +30,8 @@ class TransactionsActivity : AppCompatActivity() {
             .add(R.id.fragment_container, TransactionsListFragment.newInstance(), "TransactionFragment")
             .commit()
 
+
+
     }
 
     /*
