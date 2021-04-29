@@ -8,8 +8,8 @@ import com.example.crypto.fragment.TransactionsListFragment
 
 //Screen 7
 
-
-//TODO: Hente korrekt data når man har kjøpt forksjellige krypto
+//TODO white stripe in the UI
+//TODO delete the data in the database before vi levera
 
 class TransactionsActivity : AppCompatActivity() {
 

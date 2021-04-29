@@ -16,12 +16,14 @@ import com.squareup.picasso.Picasso
 
 
 //Screen 5
+//TODO Buttons are only enabled when the user has enough crypto to buy/sell
 
 //TODO: When entering in the USD column, for example 3000, it should convert to the BTC value automatically.
 
 class BuyActivity : AppCompatActivity() {
 
     private lateinit var viewModelT: TransactionViewModel
+    var symbol : String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,8 +37,15 @@ class BuyActivity : AppCompatActivity() {
             btn.isEnabled = true
         }
 */
+        //TODO verify the input before submitting to database. i.e if(value != String)
+        //TODO maybe clean up code by making a collectAllData function?
+        //TODO the crypto amount should be textview, not editable by user
+        //TODO the crypto amount should be calculated automatically
+        //TODO the user interface always says "BTC" under the USD, not the actual crypto
+        //TODO the crypto image always shows bitcoin image, not the actual crypto image
+
         var intent = intent
-        val symbol = intent.getStringExtra("symbol")
+        symbol = intent.getStringExtra("symbol").toString()
         val price = intent.getStringExtra("price")
         val name = intent.getStringExtra("name")
         val textViewSymbol = findViewById<TextView>(com.example.crypto.R.id.symbol)
@@ -47,15 +56,21 @@ class BuyActivity : AppCompatActivity() {
         textViewPrice.text = price
         textViewName.text = name
         Picasso.get().load("https://static.coincap.io/assets/icons/${symbol?.toLowerCase()}@2x.png").into(imageView)
-        viewModelT = TransactionViewModel(this)
-
-        var testT = Transaction(0, "btc", 01.000, 50000.000, "bought")
-        viewModelT.addCryptoTransaction(testT)
 
     }
 
+    fun sendPurchaseToDatabase(view: View) {
+        val textViewUSDPrice = findViewById<EditText>(com.example.crypto.R.id.editTextUSD)
+        val textViewBTCAmount = findViewById<EditText>(com.example.crypto.R.id.editTextBTC)
+        //messy implementation
+        val priceUSD : Double = textViewUSDPrice.text.toString().toDouble()
+        val amount : Double = textViewBTCAmount.text.toString().toDouble()
 
+        viewModelT = TransactionViewModel(this)
+
+        var testT = Transaction(0, symbol, amount, priceUSD, "bought")
+        viewModelT.addCryptoTransaction(testT)
+    }
 
 }
 
-//TODO Buttons are only enabled when the user has enough crypto to buy/sell

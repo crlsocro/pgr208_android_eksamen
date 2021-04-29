@@ -17,8 +17,6 @@
     android:hint="Name"
     android:id="@+id/nameTextField">
 
-    <!--this is the actual edit text which takes the input-->
-
 
     <com.google.android.material.textfield.TextInputEditText
         android:layout_height="wrap_content"
