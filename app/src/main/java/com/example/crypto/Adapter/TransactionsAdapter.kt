@@ -21,6 +21,7 @@ class TransactionsAdapter(val lambdaFunction: (Transaction) -> Unit) : RecyclerV
             binding.textViewAmountT.text = transaction.amount.toString()
             binding.textViewPriceT.text = transaction.price.toString()
             binding.textViewTransactionTypeT.text = transaction.transactionType
+            Picasso.get().load("https://static.coincap.io/assets/icons/${transaction.currency!!.toLowerCase()}@2x.png").into(binding.imageViewIconT)
         }
     }
 

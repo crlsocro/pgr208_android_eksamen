@@ -20,7 +20,7 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/imageViewIcon"
+                android:id="@+id/imageViewIconT"
                 android:layout_width="82dp"
                 android:layout_height="82dp"
                 android:layout_alignParentLeft="true"
