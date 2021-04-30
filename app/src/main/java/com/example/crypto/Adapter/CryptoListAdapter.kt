@@ -1,6 +1,7 @@
 package com.example.crypto.Adapter
 
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -50,6 +51,11 @@ class CryptoListAdapter(private var list: List<CryptoStats>) : RecyclerView.Adap
                 intent.putExtra("price","$" + "%.3f".format(stats.priceUsd?.toDouble()))
                 intent.putExtra("name", "${stats.name}")
                 binding.root.context.startActivity(intent)
+            }
+            if(binding.textViewPercent.text.startsWith("-")) {
+                binding.textViewPercent.setTextColor(Color.parseColor("#ed343d"))
+            } else {
+                binding.textViewPercent.setTextColor(Color.parseColor("#42f560"))
             }
         }
     }
