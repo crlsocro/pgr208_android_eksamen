@@ -11,7 +11,10 @@ class CryptoRepo {
     fun getCryptoSummary() : List<CryptoStats>  {
         var list  = cryptoApiClient.getSummary()
         return list
-
+    }
+    fun getHistorySummary(): List<CryptoStats>{
+        var liste = cryptoApiClient.getHistory()
+        return liste
     }
 
 }

@@ -2,6 +2,7 @@ package com.example.crypto.Api
 
 
 import com.example.crypto.Repo.CryptoStats
+
 import com.google.gson.GsonBuilder
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -39,6 +40,21 @@ class CryptoApiClient {
         }
         return ArrayList()
 
+    }
+    fun getHistory(): List<CryptoStats>{
+        var responser = cryptoApi.getHistory(toString()).execute()
+
+        try {
+            if(responser.isSuccessful) {
+                responser.body()?.id?.let { data ->
+                    return data
+                }
+            }
+        }
+        catch (ex: Exception){
+            ex.printStackTrace()
+        }
+        return ArrayList()
     }
 }
 /*
