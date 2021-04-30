@@ -17,7 +17,6 @@ import com.squareup.picasso.Picasso
 
 //Screen 5
 //TODO Buttons are only enabled when the user has enough crypto to buy/sell
-
 //TODO: When entering in the USD column, for example 3000, it should convert to the BTC value automatically.
 
 class BuyActivity : AppCompatActivity() {
@@ -41,17 +40,20 @@ class BuyActivity : AppCompatActivity() {
         //TODO maybe clean up code by making a collectAllData function?
         //TODO the crypto amount should be textview, not editable by user
         //TODO the crypto amount should be calculated automatically
-        //TODO the user interface always says "BTC" under the USD, not the actual crypto
-        //TODO the crypto image always shows bitcoin image, not the actual crypto image
+
+        //FIXED: the user interface always says "BTC" under the USD, not the actual crypto
+        //FIXED: the crypto image always shows bitcoin image, not the actual crypto image
 
         var intent = intent
         symbol = intent.getStringExtra("symbol").toString()
         val price = intent.getStringExtra("price")
         val name = intent.getStringExtra("name")
+        val textViewName2 = findViewById<TextView>(com.example.crypto.R.id.name2)
         val textViewSymbol = findViewById<TextView>(com.example.crypto.R.id.symbol)
         val textViewPrice = findViewById<TextView>(com.example.crypto.R.id.price)
         val textViewName = findViewById<TextView>(com.example.crypto.R.id.name)
         val imageView: ImageView = findViewById(com.example.crypto.R.id.imageIcon)
+        textViewName2.text = symbol
         textViewSymbol.text = symbol
         textViewPrice.text = price
         textViewName.text = name

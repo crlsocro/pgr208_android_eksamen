@@ -81,7 +81,7 @@
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/name2"
                 android:layout_width="48dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="100dp"
@@ -124,7 +124,7 @@
                 android:textColor="@color/textWhite"
                 android:textSize="25sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+                app:layout_constraintTop_toBottomOf="@+id/name2" />
 
             <Button
                 android:id="@+id/sellButton"

@@ -23,10 +23,12 @@ class SellActivity : AppCompatActivity() {
         val symbol = intent.getStringExtra("symbol")
         val price = intent.getStringExtra("price")
         val name = intent.getStringExtra("name")
+        val textViewName2 = findViewById<TextView>(com.example.crypto.R.id.name2)
         val textViewSymbol = findViewById<TextView>(com.example.crypto.R.id.symbol)
         val textViewPrice = findViewById<TextView>(com.example.crypto.R.id.price)
         val textViewName = findViewById<TextView>(com.example.crypto.R.id.name)
         val imageView: ImageView = findViewById(com.example.crypto.R.id.imageIcon)
+        textViewName2.text = symbol
         textViewSymbol.text = symbol
         textViewPrice.text = price
         textViewName.text = name
