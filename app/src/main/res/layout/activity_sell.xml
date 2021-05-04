@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/darkGray"
+        android:background="@drawable/gradient_drawable"
         tools:context=".BuyActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -36,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Bitcoin"
-                android:textColor="@color/textWhite"
+                android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -50,7 +50,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="BTC"
-                android:textColor="@color/textWhite"
+                android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -65,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
                 android:text="50.000"
-                android:textColor="@color/textWhite"
+                android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -82,12 +82,12 @@
 
             <TextView
                 android:id="@+id/name2"
-                android:layout_width="48dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="100dp"
                 android:layout_marginTop="100dp"
                 android:text="BTC"
-                android:textColor="@color/textWhite"
+                android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -99,7 +99,7 @@
                 android:layout_marginTop="100dp"
                 android:layout_marginEnd="100dp"
                 android:inputType="text"
-                android:textColor="@color/textWhite"
+                android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -110,18 +110,18 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginEnd="100dp"
                 android:inputType="text"
-                android:textColor="@color/textWhite"
+                android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/plain_text_input" />
 
             <TextView
                 android:id="@+id/textView9"
-                android:layout_width="48dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="100dp"
                 android:layout_marginTop="50dp"
                 android:text="USD"
-                android:textColor="@color/textWhite"
+                android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/name2" />
@@ -132,6 +132,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="100dp"
                 android:text="Sell"
+                android:backgroundTint="#174182"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView9" />
@@ -142,7 +143,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="50dp"
                 android:text="You have 4123 BTC"
-                android:textColor="@color/textWhite"
+                android:textColor="@color/white"
                 android:textSize="25sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

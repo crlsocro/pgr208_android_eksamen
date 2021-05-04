@@ -3,11 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/gradient_drawable"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/darkGray"
     tools:context=".MainActivity">
-
 
     <TextView
         android:id="@+id/textView"
@@ -16,7 +15,7 @@
         android:scaleX="4"
         android:scaleY="4"
         android:text="CryptoWorld"
-        android:textColor="#777777"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

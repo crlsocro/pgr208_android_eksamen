@@ -40,6 +40,7 @@ class BuyActivity : AppCompatActivity() {
         //TODO maybe clean up code by making a collectAllData function?
         //TODO the crypto amount should be textview, not editable by user
         //TODO the crypto amount should be calculated automatically
+        //TODO crypto with long "symbol" gets wrapped, extend name and name2
 
         //FIXED: the user interface always says "BTC" under the USD, not the actual crypto
         //FIXED: the crypto image always shows bitcoin image, not the actual crypto image
@@ -57,7 +58,7 @@ class BuyActivity : AppCompatActivity() {
         textViewSymbol.text = symbol
         textViewPrice.text = price
         textViewName.text = name
-        Picasso.get().load("https://static.coincap.io/assets/icons/${symbol?.toLowerCase()}@2x.png").into(imageView)
+        Picasso.get().load("https://static.coincap.io/assets/icons/${symbol.toLowerCase()}@2x.png").into(imageView)
 
     }
 

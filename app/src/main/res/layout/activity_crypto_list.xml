@@ -6,38 +6,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CryptoListActivity"
-    android:background="@color/darkGray">
+    android:background="@drawable/gradient_drawable">
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginBottom="51dp"
         android:onClick="toPortfolio"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/points"
-            android:textSize="18sp"
-            tools:text="points" />
     </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="413dp"
-        android:layout_height="580dp"
+        android:layout_width="411dp"
+        android:layout_height="634dp"
         android:layout_margin="8dp"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        tools:listitem="@layout/item_crypto_view"
-        android:textColor="@color/textWhite" />
+        tools:listitem="@layout/item_crypto_view" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -47,4 +42,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="402dp"
+        android:layout_height="99dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/points"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="1.0"
+        tools:text="points"
+        android:onClick="toPortfolio"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

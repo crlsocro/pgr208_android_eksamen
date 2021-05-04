@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/darkGray">
+    android:background="@drawable/gradient_drawable">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -22,7 +22,7 @@
             android:gravity="center"
             android:text="@string/points"
             android:textSize="18sp"
-            android:textColor="@color/textWhite" />
+            android:textColor="@color/white" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -34,7 +34,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout"
-        tools:textColor="@color/textWhite">
+        tools:textColor="@color/white">
 
     </androidx.recyclerview.widget.RecyclerView>
 
@@ -53,9 +53,8 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:gravity="center"
-
             tools:text="@string/portfolio_desc"
-            android:textColor="@color/textWhite"/>
+            android:textColor="@color/white"/>
     </FrameLayout>
 
     <Button
