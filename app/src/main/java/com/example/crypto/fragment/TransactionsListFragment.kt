@@ -39,7 +39,6 @@ class TransactionsListFragment : Fragment(R.layout.transactions_list_fragment) {
         configureList()
         observe()
         // Listeners for view events
-        viewListeners()
     }
 
     //TODO if listlivedata is red, find out why
@@ -55,13 +54,4 @@ class TransactionsListFragment : Fragment(R.layout.transactions_list_fragment) {
         binding.transactionsList.adapter = adapter
     }
 
-    private fun viewListeners() {
-        binding.addButton.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(
-                    R.id.fragment_container, TransactionFragment.newInstance()
-                ).addToBackStack("TransactionFragment")
-                .commit()
-        }
-    }
 }

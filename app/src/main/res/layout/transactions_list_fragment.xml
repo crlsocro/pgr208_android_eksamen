@@ -13,16 +13,4 @@
         android:layout_width="match_parent"
         android:id="@+id/transactions_list"/>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/add_button"
-        app:tint="@color/white"
-        app:fabSize="auto"
-        app:backgroundTint="@color/purple_500"
-        android:src="@drawable/btc"
-        android:elevation="15dp"
-        android:layout_margin="34dp"
-        android:layout_gravity="bottom|end"/>
-
 </FrameLayout>

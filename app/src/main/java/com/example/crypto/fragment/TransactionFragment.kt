@@ -45,27 +45,4 @@ class TransactionFragment : Fragment(R.layout.transaction_fragment) {
             }
         }*/
     }
-
-    private fun initViewListeners() {
-        with(binding) {
-            saveButton.setOnClickListener {
-                if (transactionID == null) {
-                    viewModel.saveData(
-                            name.text.toString(),
-                            course.text.toString(),
-                            50.0,
-                            100.0,
-                            999)
-                } else {
-                    //TODO fix the ugly af course.text
-                    viewModel.updateData(
-                            transactionID.toString(),
-                            name.text.toString(),
-                            Integer.parseInt(course.text.toString()).toDouble(),
-                            50.0,
-                            999)
-                }
-            }
-        }
-    }
 }
