@@ -35,6 +35,7 @@ class PortfolioActivity : AppCompatActivity() {
         viewModelB = BalanceViewModel(this)
         viewModel = MainViewModel(this)
 
+
     }
 
 
