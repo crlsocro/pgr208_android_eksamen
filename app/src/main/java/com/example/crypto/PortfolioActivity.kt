@@ -15,6 +15,7 @@ import com.example.crypto.databinding.ActivityPortfolioBinding
 import com.example.crypto.databinding.ActivityTransactionsBinding
 import com.example.crypto.databinding.ItemPortfolioViewBinding
 import com.example.crypto.databinding.ItemTransactionViewBinding
+import com.example.crypto.fragment.BalanceListFragment
 import com.example.crypto.fragment.TransactionsListFragment
 import com.example.crypto.viewmodel.BalanceViewModel
 import com.example.crypto.viewmodel.MainViewModel
@@ -36,7 +37,7 @@ class PortfolioActivity : AppCompatActivity() {
 
         supportFragmentManager
                 .beginTransaction()
-                .add(R.id.fragment_container, TransactionsListFragment.newInstance(), "TransactionFragment")
+                .add(R.id.fragment_container, BalanceListFragment.newInstance(), "BalanceFragment")
                 .commit()
 
 
