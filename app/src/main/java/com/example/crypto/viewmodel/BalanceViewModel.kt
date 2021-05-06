@@ -10,6 +10,7 @@ import com.example.crypto.database.CryptoDatabase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.lang.Exception
 
 class BalanceViewModel(context: Context) : ViewModel() {
 
@@ -31,7 +32,11 @@ class BalanceViewModel(context: Context) : ViewModel() {
     fun getBalanceCoin (currency:String) {
         viewModelScope.launch {
             withContext(Dispatchers.IO){
-                theCoin = balanceDAO.getBalancewithSymbol(currency)
+                try {
+                    theCoin = balanceDAO.getBalancewithSymbol(currency)
+                }catch (e: Exception){
+
+                }
 
             }
         }
