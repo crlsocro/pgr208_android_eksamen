@@ -14,7 +14,6 @@ class TransactionsAdapter(val lambdaFunction: (Transaction) -> Unit) : RecyclerV
 
     class ViewHolder(val binding: ItemTransactionViewBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(transaction: Transaction) {
-            //TODO add the images
             //TODO change xml to display these values
             binding.textViewTransactionIDT.text = transaction.transactionID.toString()
             binding.textViewCryptoNameT.text = transaction.currency
