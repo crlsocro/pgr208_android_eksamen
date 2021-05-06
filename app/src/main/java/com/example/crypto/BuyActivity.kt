@@ -112,6 +112,7 @@ class BuyActivity : AppCompatActivity() {
                 println("Hello coins")
                 testB.amount += viewModelB.theCoin?.amount
             }
+            viewModelB.addCryptoBalance(testB)
         }catch( ex:Exception) {
 
         }
@@ -122,7 +123,7 @@ class BuyActivity : AppCompatActivity() {
         var testT = Transaction(0, symbol, amount, priceUSD, "bought")
         viewModelT.addCryptoTransaction(testT)
 
-        viewModelB.addCryptoBalance(testB)
+
 
         println(testB?.currency)
         println(viewModelB.theCoin?.currency)
