@@ -26,7 +26,7 @@ class BalanceViewModel(context: Context) : ViewModel() {
         }
     }
 
-    var theCoin : Balance = Balance(0, "ETH", 0.0, 0.0)
+    var theCoin : Balance = Balance(0, "", 0.0, 0.0)
 
     fun getBalanceCoin (currency:String) {
         viewModelScope.launch {

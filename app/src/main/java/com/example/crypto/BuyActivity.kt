@@ -97,27 +97,38 @@ class BuyActivity : AppCompatActivity() {
         val textViewBTCAmount = findViewById<TextView>(com.example.crypto.R.id.editTextBTC)
         //messy implementation
         val priceUSD : Double = textViewUSDPrice.text.toString().toDouble()
-        val amount : Double = textViewBTCAmount.text.toString().toDouble()
+        var amount : Double = textViewBTCAmount.text.toString().toDouble()
 
         viewModelT = TransactionViewModel(this)
         viewModelB = BalanceViewModel(this)
 
-        viewModelB.getBalanceCoin(name)
+        var testB = Balance(0, symbol, amount, priceUSD)
+
+
+        try{
+            viewModelB.getBalanceCoin(symbol)
+
+            if (viewModelB.theCoin?.currency === testB?.currency){
+                println("Hello coins")
+                testB.amount += viewModelB.theCoin?.amount
+            }
+        }catch( ex:Exception) {
+
+        }
+
 
 
 
         var testT = Transaction(0, symbol, amount, priceUSD, "bought")
         viewModelT.addCryptoTransaction(testT)
 
-        var testB = Balance(0, symbol, amount, priceUSD)
         viewModelB.addCryptoBalance(testB)
 
-        println(testB.currency)
-        println(viewModelB.theCoin.currency)
+        println(testB?.currency)
+        println(viewModelB.theCoin?.currency)
+        println(testB.amount)
 
-        if (viewModelB.theCoin.currency == testB.currency){
-            println("Hello coins")
-        }
+
 /*
         viewModelB = BalanceViewModel(this)
 

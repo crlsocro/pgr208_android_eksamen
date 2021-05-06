@@ -12,7 +12,7 @@ data class Balance(
         @ColumnInfo(name = "currency")
         val currency: String?,
         @ColumnInfo(name = "amount")
-        val amount: Double,
+        var amount: Double,
         @ColumnInfo(name = "price")
         val price: Double
 )
