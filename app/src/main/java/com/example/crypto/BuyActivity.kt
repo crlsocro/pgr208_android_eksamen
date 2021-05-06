@@ -108,7 +108,7 @@ class BuyActivity : AppCompatActivity() {
         try{
             viewModelB.getBalanceCoin(symbol)
 
-            if (viewModelB.theCoin.currency == symbol){
+            if (viewModelB.getCoin(symbol).currency == symbol){
                 println("Hello coins")
                 testB.amount += viewModelB.theCoin?.amount
             }else{
