@@ -78,7 +78,7 @@ class BuyActivity : AppCompatActivity() {
                 if (price != null) {
                     println(editTextUSDPrice.text.toString())
                     var commaless = price.replace(",", ".")
-                    textViewBTCPrice.text = (editTextUSDPrice.text.toString().toDouble() * commaless.toDouble()).toString()
+                    textViewBTCPrice.text = (editTextUSDPrice.text.toString().toDouble() / commaless.toDouble()).toString()
                 }
             }
 
