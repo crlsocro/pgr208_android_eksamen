@@ -22,8 +22,8 @@ interface TransactionDAO {
     //the symbol thing is the "btc" tingen.
     //TODO Change ID to symbol here. Currently in here for testing
     //TODO change funtion name, funtion type, function parameter, function parameter type
-    @Query("select * from transaction_table where transactionID = :transactionID")
-    suspend fun getBalancewithSymbol(transactionID: Long): Transaction
+    @Query("select * from transaction_table where transactionType = :transactionType")
+    suspend fun getGiftTransaction(transactionType: String): Transaction
 
 
 

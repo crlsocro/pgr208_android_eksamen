@@ -10,6 +10,7 @@ import androidx.lifecycle.observe
 import com.example.crypto.database.Balance
 import com.example.crypto.database.CryptoDatabase
 import com.example.crypto.database.Transaction
+import com.example.crypto.databinding.ActivityPortfolioBinding
 import com.example.crypto.databinding.ItemPortfolioViewBinding
 import com.example.crypto.databinding.ItemTransactionViewBinding
 import com.example.crypto.viewmodel.BalanceViewModel
@@ -26,11 +27,11 @@ class PortfolioActivity : AppCompatActivity() {
     private lateinit var viewModelB: BalanceViewModel
     private lateinit var viewModel : MainViewModel
 
-    private lateinit var binding: ItemPortfolioViewBinding
+    private lateinit var binding: ActivityPortfolioBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_portfolio)
+        setContentView(R.layout.item_crypto_view)
 
         viewModelB = BalanceViewModel(this)
         viewModel = MainViewModel(this)

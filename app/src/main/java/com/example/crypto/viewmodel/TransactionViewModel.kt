@@ -18,17 +18,17 @@ class TransactionViewModel(context: Context) : ViewModel() {
     private val _transactionLiveData: MutableLiveData<Transaction> = MutableLiveData()
     val transactionLiveData: LiveData<Transaction> = _transactionLiveData
 
-    fun init(context: Context, transactionID: Long?) {
+    fun init(context: Context, transactionType: String?) {
         // Initialize database
         transactionDAO = CryptoDatabase.get(context).getTDAO()
-        if (transactionID != null) {
-            getTransaction(transactionID)
+        if (transactionType != null) {
+            getTransaction(transactionType)
         }
     }
 
-    private fun getTransaction(transactionID: Long) {
+    private fun getTransaction(transactionType: String?) {
         viewModelScope.launch {
-            _transactionLiveData.value = transactionDAO.getBalancewithSymbol(transactionID)
+            _transactionLiveData.value = transactionDAO.getGiftTransaction(transactionType!!)
         }
     }
 

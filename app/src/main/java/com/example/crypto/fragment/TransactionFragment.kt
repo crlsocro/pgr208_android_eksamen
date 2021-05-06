@@ -28,6 +28,7 @@ class TransactionFragment : Fragment(R.layout.transaction_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        /*
         // Init
         binding = TransactionFragmentBinding.bind(view)
         transactionID = arguments?.getLong("transactionID")
@@ -42,7 +43,7 @@ class TransactionFragment : Fragment(R.layout.transaction_fragment) {
                 course.setText(it.transactionType)
                 //saveButton.setText(R.string.update)
             }
-        }
+        }*/
     }
 
     private fun initViewListeners() {

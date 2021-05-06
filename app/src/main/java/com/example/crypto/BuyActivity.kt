@@ -74,8 +74,6 @@ class BuyActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
             }
 
-
-
             override fun afterTextChanged(s: Editable?) {
                 if (price != null) {
                     println(editTextUSDPrice.text.toString())
@@ -95,9 +93,13 @@ class BuyActivity : AppCompatActivity() {
         val amount : Double = textViewBTCAmount.text.toString().toDouble()
 
         viewModelT = TransactionViewModel(this)
+        viewModelB = BalanceViewModel(this)
 
         var testT = Transaction(0, symbol, amount, priceUSD, "bought")
         viewModelT.addCryptoTransaction(testT)
+
+        var testB = Balance(0, symbol, amount, priceUSD)
+        viewModelB.addCryptoBalance(testB)
 
 /*
         viewModelB = BalanceViewModel(this)
