@@ -30,7 +30,7 @@ class PortfolioAdapter (val lambdaFunction: (Balance) -> Unit) : RecyclerView.Ad
     }
 
     override fun onBindViewHolder(holder: PortfolioAdapter.ViewHolder, position: Int) {
-
+        holder.bind(balanceList[position])
     }
 
     override fun getItemCount(): Int {

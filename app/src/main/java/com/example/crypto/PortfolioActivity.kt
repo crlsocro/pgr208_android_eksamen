@@ -31,7 +31,7 @@ class PortfolioActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.item_crypto_view)
+        setContentView(R.layout.activity_portfolio)
 
         viewModelB = BalanceViewModel(this)
         viewModel = MainViewModel(this)
