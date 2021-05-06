@@ -108,9 +108,13 @@ class BuyActivity : AppCompatActivity() {
         try{
             viewModelB.getBalanceCoin(symbol)
 
-            if (viewModelB.theCoin?.currency === testB?.currency){
+            if (viewModelB.theCoin.currency == symbol){
                 println("Hello coins")
                 testB.amount += viewModelB.theCoin?.amount
+            }else{
+                println("OMG YOLO SWAG")
+                println(testB.currency + " ")
+                println(viewModelB.theCoin.currency + " ")
             }
             viewModelB.addCryptoBalance(testB)
         }catch( ex:Exception) {
@@ -125,9 +129,8 @@ class BuyActivity : AppCompatActivity() {
 
 
 
-        println(testB?.currency)
-        println(viewModelB.theCoin?.currency)
-        println(testB.amount)
+
+        //println(testB.amount)
 
 
 /*
