@@ -17,8 +17,8 @@ interface BalanceDAO {
     @Query("SELECT * FROM balance_table")
     fun getAllBalances(): List<Balance>
 
-    @Query("select * from balance_table where balanceID = :balanceID")
-    suspend fun getBalancewithSymbol(balanceID: Long): Balance
+    @Query("select * from balance_table where currency = :currency")
+    fun getBalancewithSymbol(currency: String): Balance
 
 
 }

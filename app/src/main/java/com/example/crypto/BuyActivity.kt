@@ -2,6 +2,7 @@ package com.example.crypto
 
 import android.R
 import android.os.Bundle
+import android.os.Debug
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
@@ -9,12 +10,17 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.lifecycle.viewModelScope
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.viewModelScope
 import com.example.crypto.database.Balance
 import com.example.crypto.database.Transaction
 import com.example.crypto.viewmodel.BalanceViewModel
 import com.example.crypto.viewmodel.TransactionViewModel
 import com.squareup.picasso.Picasso
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 
 //Screen 5
@@ -26,6 +32,7 @@ class BuyActivity : AppCompatActivity() {
     private lateinit var viewModelT: TransactionViewModel
     private lateinit var viewModelB: BalanceViewModel
     var symbol : String = ""
+    var name : String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,7 +58,7 @@ class BuyActivity : AppCompatActivity() {
         var intent = intent
         symbol = intent.getStringExtra("symbol").toString()
         val price = intent.getStringExtra("price")
-        val name = intent.getStringExtra("name")
+        name = intent.getStringExtra("name").toString()
         val textViewName2 = findViewById<TextView>(com.example.crypto.R.id.name2)
         val textViewSymbol = findViewById<TextView>(com.example.crypto.R.id.symbol)
         val textViewPrice = findViewById<TextView>(com.example.crypto.R.id.price)
@@ -76,7 +83,7 @@ class BuyActivity : AppCompatActivity() {
 
             override fun afterTextChanged(s: Editable?) {
                 if (price != null) {
-                    println(editTextUSDPrice.text.toString())
+                    //println(editTextUSDPrice.text.toString())
                     var commaless = price.replace(",", ".")
                     textViewBTCPrice.text = (editTextUSDPrice.text.toString().toDouble() / commaless.toDouble()).toString()
                 }
@@ -95,12 +102,22 @@ class BuyActivity : AppCompatActivity() {
         viewModelT = TransactionViewModel(this)
         viewModelB = BalanceViewModel(this)
 
+        viewModelB.getBalanceCoin(name)
+
+
+
         var testT = Transaction(0, symbol, amount, priceUSD, "bought")
         viewModelT.addCryptoTransaction(testT)
 
         var testB = Balance(0, symbol, amount, priceUSD)
         viewModelB.addCryptoBalance(testB)
 
+        println(testB.currency)
+        println(viewModelB.theCoin.currency)
+
+        if (viewModelB.theCoin.currency == testB.currency){
+            println("Hello coins")
+        }
 /*
         viewModelB = BalanceViewModel(this)
 
