@@ -24,6 +24,7 @@ import com.squareup.picasso.Picasso
 class BuyActivity : AppCompatActivity() {
 
     private lateinit var viewModelT: TransactionViewModel
+    private lateinit var viewModelB: BalanceViewModel
     var symbol : String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -97,6 +98,14 @@ class BuyActivity : AppCompatActivity() {
 
         var testT = Transaction(0, symbol, amount, priceUSD, "bought")
         viewModelT.addCryptoTransaction(testT)
+
+/*
+        viewModelB = BalanceViewModel(this)
+
+        var testB = Balance(0, symbol, amount, priceUSD)
+        viewModelB.addCryptoBalance(testB)
+
+ */
     }
 
 }

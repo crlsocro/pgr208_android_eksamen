@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:padding="10dp"
+    android:layout_margin="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:background="#174182"
+    >
+
+    <ImageView
+        android:id="@+id/imageViewIconBalance"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="27dp"
+        app:srcCompat="@drawable/btc"/>
+
+    <TextView
+        android:id="@+id/textViewCryptoNameBalance"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@+id/imageViewIconBalance"
+        android:textColor="@android:color/white"
+        android:textSize="15sp"
+        android:textStyle="normal"
+        tools:text="Name"/>
+
+    <TextView
+        android:id="@+id/textViewCryptoSymbolBalance"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewCryptoNameBalance"
+        android:layout_toRightOf="@+id/imageViewIconBalance"
+        android:layout_centerVertical="true"
+        android:textColor="@android:color/white"
+        android:textSize="10sp"
+        android:layout_marginLeft="10dp"
+        android:textStyle="normal"
+        tools:text="Symbol" />
+
+    <TextView
+        android:id="@+id/textViewCryptoPriceUsdBalance"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-0dp"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@id/textViewCryptoNameBalance"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        android:text="$"
+        tools:text="PriceUsd"/>
+    <TextView
+        android:id="@+id/textViewPercentBalance"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/textViewCryptoPriceUsdBalance"
+        android:textSize="15sp"
+        android:textColor="@android:color/white"
+        android:textStyle="normal"
+        tools:text="changePercent24Hr"/>
+
+</RelativeLayout>
