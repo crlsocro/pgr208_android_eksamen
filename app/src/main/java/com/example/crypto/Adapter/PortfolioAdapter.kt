@@ -8,11 +8,11 @@ import com.example.crypto.databinding.ItemPortfolioViewBinding
 import com.example.crypto.databinding.ItemTransactionViewBinding
 import com.squareup.picasso.Picasso
 
-class PortfolioAdapter (val lambdaFunction: (Balance) -> Unit) : RecyclerView.Adapter<TransactionsAdapter.ViewHolder>(){
+class PortfolioAdapter (val lambdaFunction: (Balance) -> Unit) : RecyclerView.Adapter<PortfolioAdapter.ViewHolder>(){
 
     private val balanceList = mutableListOf<Balance>()
 
-    class viewHolder(val binding: ItemPortfolioViewBinding) : RecyclerView.ViewHolder(binding.root){
+    class ViewHolder(val binding: ItemPortfolioViewBinding) : RecyclerView.ViewHolder(binding.root){
         fun bind(balance: Balance){
             binding.textViewCryptoNameBalance.text = balance.balanceID.toString()
             binding.textViewCryptoSymbolBalance.text = balance.balanceID.toString()
@@ -21,15 +21,15 @@ class PortfolioAdapter (val lambdaFunction: (Balance) -> Unit) : RecyclerView.Ad
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TransactionsAdapter.ViewHolder {
-        val holder = TransactionsAdapter.ViewHolder(ItemTransactionViewBinding.inflate(LayoutInflater.from(parent.context)))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PortfolioAdapter.ViewHolder {
+        val holder = PortfolioAdapter.ViewHolder(ItemPortfolioViewBinding.inflate(LayoutInflater.from(parent.context)))
         holder.itemView.setOnClickListener {
             lambdaFunction(balanceList[holder.adapterPosition])
         }
         return holder
     }
 
-    override fun onBindViewHolder(holder: TransactionsAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: PortfolioAdapter.ViewHolder, position: Int) {
 
     }
 
