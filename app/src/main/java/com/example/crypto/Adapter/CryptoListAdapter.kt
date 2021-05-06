@@ -48,7 +48,7 @@ class CryptoListAdapter(private var list: List<CryptoStats>) : RecyclerView.Adap
                 println("test")
                 val intent = Intent(binding.root.context, BuySellActivity::class.java)
                 intent.putExtra("symbol", "${stats.symbol}")
-                intent.putExtra("price","$" + "%.3f".format(stats.priceUsd?.toDouble()))
+                intent.putExtra("price", "%.3f".format(stats.priceUsd?.toDouble()))
                 intent.putExtra("name", "${stats.name}")
                 binding.root.context.startActivity(intent)
             }

@@ -2,6 +2,8 @@ package com.example.crypto
 
 import android.R
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -53,6 +55,8 @@ class BuyActivity : AppCompatActivity() {
         val textViewSymbol = findViewById<TextView>(com.example.crypto.R.id.symbol)
         val textViewPrice = findViewById<TextView>(com.example.crypto.R.id.price)
         val textViewName = findViewById<TextView>(com.example.crypto.R.id.name)
+        val textViewBTCPrice = findViewById<TextView>(com.example.crypto.R.id.editTextBTC)
+        val editTextUSDPrice = findViewById<EditText>(com.example.crypto.R.id.editTextUSD)
         val imageView: ImageView = findViewById(com.example.crypto.R.id.imageIcon)
         textViewName2.text = symbol
         textViewSymbol.text = symbol
@@ -60,11 +64,26 @@ class BuyActivity : AppCompatActivity() {
         textViewName.text = name
         Picasso.get().load("https://static.coincap.io/assets/icons/${symbol.toLowerCase()}@2x.png").into(imageView)
 
+        editTextUSDPrice.addTextChangedListener(object:TextWatcher{
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                if (price != null) {
+                    textViewBTCPrice.text = (editTextUSDPrice.text.toString().toDouble() / price.toDouble()).toString()
+                }
+            }
+
+        })
     }
 
     fun sendPurchaseToDatabase(view: View) {
         val textViewUSDPrice = findViewById<EditText>(com.example.crypto.R.id.editTextUSD)
-        val textViewBTCAmount = findViewById<EditText>(com.example.crypto.R.id.editTextBTC)
+        val textViewBTCAmount = findViewById<TextView>(com.example.crypto.R.id.editTextBTC)
         //messy implementation
         val priceUSD : Double = textViewUSDPrice.text.toString().toDouble()
         val amount : Double = textViewBTCAmount.text.toString().toDouble()
