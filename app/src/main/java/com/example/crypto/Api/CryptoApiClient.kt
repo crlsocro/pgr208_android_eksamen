@@ -57,18 +57,3 @@ class CryptoApiClient {
         return ArrayList()
     }
 }
-/*
-        package com.example.myapplication
-
-class dummySource {
-    fun getSummary(): List<CryptoStats>{
-        var list = ArrayList<CryptoStats>()
-
-        list.add(CryptoStats("Bitcoin",1, "BTC","Bitcoin", 6929.82))
-        list.add(CryptoStats("ethereum",2, "ETH","Ethereum" ,404.97))
-
-
-        return list
-    }
-}
- */

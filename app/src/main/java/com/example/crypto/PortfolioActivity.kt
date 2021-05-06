@@ -42,34 +42,6 @@ class PortfolioActivity : AppCompatActivity() {
 
     }
 
-
-
-
-/*
-    fun testDatabase(view: View){
-        var testB = Balance(0, "btc", 01.000, 50000.000)
-        viewModelB.addCryptoBalance(testB)
-
-        //Display the database (test)
-        /*CryptoDatabase.get(this).getBDAO().getAllBalances().map { testB ->
-            Log.d(this.javaClass.simpleName, testB.toString())
-        }*/
-
-
-        //Display the database (test)
-        /*CryptoDatabase.get(this).getTDAO().getAllTransactions().map { testT ->
-            Log.d(this.javaClass.simpleName, testT.toString())
-        }*/
-
-        viewModel.getTransactions().observe(this, { list->
-            list.map {entity->
-                Log.d(this.javaClass.simpleName, entity.toString())
-            }
-        })
-
-    }
-*/
-
     fun toTransactions(view: View) {
         val intent = Intent(this, TransactionsActivity::class.java).apply {
 

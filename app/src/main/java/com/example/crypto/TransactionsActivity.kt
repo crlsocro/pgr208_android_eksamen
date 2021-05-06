@@ -13,11 +13,6 @@ import com.example.crypto.fragment.TransactionsListFragment
 
 class TransactionsActivity : AppCompatActivity() {
 
-
-    /*
-    private lateinit var viewModelT: TransactionViewModel
-    private lateinit var viewModel : MainViewModel
-    val price : TextView = findViewById(R.id.textViewPrice)*/
     private lateinit var binding: ActivityTransactionsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,31 +28,5 @@ class TransactionsActivity : AppCompatActivity() {
 
 
     }
-
-    /*
-    fun testDatabase(view: View){
-
-
-        //Display the database (test)
-        /*CryptoDatabase.get(this).getBDAO().getAllBalances().map { testB ->
-            Log.d(this.javaClass.simpleName, testB.toString())
-        }*/
-
-        var testT = Transaction(0, "btc", 01.000, 50000.000, "bought")
-        viewModelT.addCryptoTransaction(testT)
-
-        //Display the database (test)
-        /*CryptoDatabase.get(this).getTDAO().getAllTransactions().map { testT ->
-            Log.d(this.javaClass.simpleName, testT.toString())
-        }*/
-
-        viewModel.getTransactions().observe(this, { list->
-            list.map {entity->
-                Log.d(this.javaClass.simpleName, entity.toString())
-                price.text = "${entity}"
-            }
-        })
-
-    }*/
 }
 
