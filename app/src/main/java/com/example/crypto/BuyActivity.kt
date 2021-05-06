@@ -58,6 +58,7 @@ class BuyActivity : AppCompatActivity() {
         val textViewBTCPrice = findViewById<TextView>(com.example.crypto.R.id.editTextBTC)
         val editTextUSDPrice = findViewById<EditText>(com.example.crypto.R.id.editTextUSD)
         val imageView: ImageView = findViewById(com.example.crypto.R.id.imageIcon)
+        textViewBTCPrice.text = symbol
         textViewName2.text = symbol
         textViewSymbol.text = symbol
         textViewPrice.text = price
