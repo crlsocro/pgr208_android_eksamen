@@ -40,8 +40,6 @@ class PortfolioActivity : AppCompatActivity() {
                 .add(R.id.fragment_container, BalanceListFragment.newInstance(), "BalanceFragment")
                 .commit()
 
-
-
     }
 
 

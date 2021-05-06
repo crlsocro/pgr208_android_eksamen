@@ -20,5 +20,7 @@ interface BalanceDAO {
     @Query("select * from balance_table where currency = :currency")
     fun getBalancewithSymbol(currency: String): Balance
 
+    @Query("UPDATE balance_table SET amount = amount + :addValue WHERE currency =:id")
+     fun updateSum(id: Int, addValue: Long)
 
 }

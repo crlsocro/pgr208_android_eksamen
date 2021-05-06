@@ -65,6 +65,8 @@ class BuySellActivity : AppCompatActivity() {
             startActivity(i)
         }
     }
+
+    //Copied from https://github.com/kristiania-android-course/SimpleChartExample
     private fun drawSinGraph() {
 
         var series: ArrayList<DataEntry> = ArrayList()

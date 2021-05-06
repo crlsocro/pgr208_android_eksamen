@@ -27,15 +27,16 @@
 
     <FrameLayout
         android:id="@+id/fragment_container"
-        android:layout_width="0dp"
-        android:layout_height="414dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout"
         tools:textColor="@color/white"
-        tools:context=".PortfolioActivity"/>
+        tools:context=".PortfolioActivity"
+        tools:listitem="@layout/item_portfolio_view"/>
 
 
     <FrameLayout
@@ -51,6 +52,7 @@
             android:id="@+id/textView4"
             android:layout_width="250dp"
             android:layout_height="match_parent"
+            android:text="Your total points are the sum of all your crypto currencies in USD"
             android:layout_gravity="center"
             android:gravity="center"
             tools:text="@string/portfolio_desc"
