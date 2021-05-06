@@ -69,7 +69,7 @@ class PortfolioActivity : AppCompatActivity() {
         })
 
     }
-
+*/
 
     fun toTransactions(view: View) {
         val intent = Intent(this, TransactionsActivity::class.java).apply {
@@ -77,7 +77,4 @@ class PortfolioActivity : AppCompatActivity() {
         }
         startActivity(intent)
     }
-    */
-
-
 }
