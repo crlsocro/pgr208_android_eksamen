@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 
 
 
-@Database(entities = [Balance::class, Transaction::class], version = 3)
+@Database(entities = [Balance::class, Transaction::class], version = 4)
 abstract class CryptoDatabase : RoomDatabase(){
     abstract fun getBDAO(): BalanceDAO
     abstract fun getTDAO(): TransactionDAO
