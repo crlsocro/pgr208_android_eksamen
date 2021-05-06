@@ -14,7 +14,5 @@ data class Balance(
         @ColumnInfo(name = "amount")
         val amount: Double,
         @ColumnInfo(name = "price")
-        val price: Double,
-        @ColumnInfo(name = "balanceType")
-        val balanceType: String?
+        val price: Double
 )
