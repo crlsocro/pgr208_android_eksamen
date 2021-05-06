@@ -47,7 +47,7 @@ class CryptoListActivity : AppCompatActivity(){
     }
 
     fun toPortfolio(view: View) {
-        val intent = Intent(this, TransactionsActivity::class.java).apply {
+        val intent = Intent(this, PortfolioActivity::class.java).apply {
 
         }
         startActivity(intent)

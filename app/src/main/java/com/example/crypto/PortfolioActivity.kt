@@ -10,6 +10,7 @@ import androidx.lifecycle.observe
 import com.example.crypto.database.Balance
 import com.example.crypto.database.CryptoDatabase
 import com.example.crypto.database.Transaction
+import com.example.crypto.databinding.ItemPortfolioViewBinding
 import com.example.crypto.databinding.ItemTransactionViewBinding
 import com.example.crypto.viewmodel.BalanceViewModel
 import com.example.crypto.viewmodel.MainViewModel
@@ -23,37 +24,20 @@ class PortfolioActivity : AppCompatActivity() {
     //TODO: Make a button work to go to Transactions
 
     private lateinit var viewModelB: BalanceViewModel
-    private lateinit var viewModelT: TransactionViewModel
     private lateinit var viewModel : MainViewModel
 
-    private lateinit var binding: ItemTransactionViewBinding
+    private lateinit var binding: ItemPortfolioViewBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_portfolio)
 
         viewModelB = BalanceViewModel(this)
-        viewModelT = TransactionViewModel(this)
         viewModel = MainViewModel(this)
 
     }
 
-    override fun onResume() {
-        super.onResume()
 
-        viewModel.getBalances().observe(this) {
-            with(binding) {
-                textViewPriceT.setText("dsadsadas")
-            }
-        }
-
-        viewModel.getTransactions().observe(this) { list->
-            list.map {entity->
-                Log.d(this.javaClass.simpleName, entity.toString())
-            }
-        }
-
-    }
 
 
 
@@ -66,8 +50,6 @@ class PortfolioActivity : AppCompatActivity() {
             Log.d(this.javaClass.simpleName, testB.toString())
         }*/
 
-        var testT = Transaction(0, "btc", 01.000, 50000.000, "bought")
-        viewModelT.addCryptoTransaction(testT)
 
         //Display the database (test)
         /*CryptoDatabase.get(this).getTDAO().getAllTransactions().map { testT ->
