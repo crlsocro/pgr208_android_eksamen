@@ -18,14 +18,7 @@ class TransactionsListFragment : Fragment(R.layout.transactions_list_fragment) {
 
     //TODO remove from this function from this file after adding to balance, if possible
     //TODO changed the newInstance
-    private val adapter = TransactionsAdapter { transaction ->
-        parentFragmentManager.beginTransaction()
-            .replace(
-                R.id.fragment_container,
-                TransactionFragment.newInstance(transactionID = transaction.transactionID.toLong())
-            ).addToBackStack("TransactionFragment")
-            .commit()
-    }
+    private val adapter = TransactionsAdapter {}
     private lateinit var binding: TransactionsListFragmentBinding
     private val viewModel: TransactionsListViewModel by viewModels()
 
