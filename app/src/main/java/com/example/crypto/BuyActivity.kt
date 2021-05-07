@@ -83,7 +83,6 @@ class BuyActivity : AppCompatActivity() {
 
             override fun afterTextChanged(s: Editable?) {
                 if (price != null) {
-                    //println(editTextUSDPrice.text.toString())
                     var commaless = price.replace(",", ".")
                     textViewBTCPrice.text = (editTextUSDPrice.text.toString().toDouble() / commaless.toDouble()).toString()
                 }
