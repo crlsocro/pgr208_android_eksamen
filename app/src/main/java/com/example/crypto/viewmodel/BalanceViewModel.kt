@@ -29,11 +29,16 @@ class BalanceViewModel(context: Context) : ViewModel() {
 
     var theCoin : Balance = Balance(0, "", 0.0, 0.0)
 
+    fun getCoin (currency: String): Balance {
+        theCoin = balanceDAO.getBalancewithSymbol(currency)
+        return theCoin
+    }
+
     fun getBalanceCoin (currency:String) {
         viewModelScope.launch {
             withContext(Dispatchers.IO){
                 try {
-                    theCoin = balanceDAO.getBalancewithSymbol(currency)
+                    getCoin(currency)
                 }catch (e: Exception){
 
                 }
