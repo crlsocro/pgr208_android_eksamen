@@ -27,7 +27,7 @@ class MainViewModel(context: Context) : ViewModel() {
                 balanceDao.getAllBalances()
             }
 
-            liveBalance.value = resultB // updating the value
+            liveBalance.value = resultB
         }
 
         return liveBalance
@@ -43,7 +43,7 @@ class MainViewModel(context: Context) : ViewModel() {
                 transactionDao.getAllTransactions()
             }
 
-            liveTransaction.value = resultT // updating the value
+            liveTransaction.value = resultT
         }
 
         return liveTransaction

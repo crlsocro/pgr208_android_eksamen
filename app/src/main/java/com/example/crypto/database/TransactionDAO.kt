@@ -18,9 +18,6 @@ interface TransactionDAO {
     @Query("SELECT * FROM transaction_table")
     fun getAllTransactions(): List<Transaction>
 
-
-    //TODO Change ID to symbol here. Currently in here for testing
-    //TODO change funtion name, funtion type, function parameter, function parameter type
     @Query("select * from transaction_table where transactionType = :transactionType")
     suspend fun getGiftTransaction(transactionType: String): Transaction
 

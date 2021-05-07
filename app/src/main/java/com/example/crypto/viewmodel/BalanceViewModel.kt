@@ -16,9 +16,6 @@ class BalanceViewModel(context: Context) : ViewModel() {
 
     private var balanceDAO : BalanceDAO = CryptoDatabase.get(context).getBDAO()
 
-    //TODO change test to the name we use to insert or read from database. also in buyactivity + sellactivity
-    //Change both instances of "test"
-    //Bruk addCryptoBalance for å legge til i databasen
     fun addCryptoBalance (testB: Balance){
         viewModelScope.launch {
             withContext(Dispatchers.IO){

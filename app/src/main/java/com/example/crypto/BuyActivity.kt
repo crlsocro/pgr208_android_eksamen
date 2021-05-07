@@ -24,7 +24,6 @@ import kotlinx.coroutines.withContext
 
 
 //Screen 5
-//TODO Buttons are only enabled when the user has enough crypto to buy/sell
 
 class BuyActivity : AppCompatActivity() {
 
@@ -36,20 +35,6 @@ class BuyActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(com.example.crypto.R.layout.activity_buy)
-/*
-        var btn : Button = findViewById(R.id.buyButton)
-        btn.isEnabled = false
-
-        var usdEdit : EditText = findViewById<EditText>(com.example.crypto.R.id.editTextUSD)
-        if (Integer.parseInt(usdEdit.text.toString()) > 5 || usdEdit.text.toString() == ""){
-            btn.isEnabled = true
-        }
-
-
-*/
-        //TODO verify the input before submitting to database. i.e if(value != String)
-
-
 
         var intent = intent
         symbol = intent.getStringExtra("symbol").toString()
@@ -117,24 +102,9 @@ class BuyActivity : AppCompatActivity() {
         }
 
 
-
-
         var testT = Transaction(0, symbol, amount, priceUSD, "bought")
         viewModelT.addCryptoTransaction(testT)
 
-
-
-
-        //println(testB.amount)
-
-
-/*
-        viewModelB = BalanceViewModel(this)
-
-        var testB = Balance(0, symbol, amount, priceUSD)
-        viewModelB.addCryptoBalance(testB)
-
- */
     }
 
 }

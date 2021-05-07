@@ -32,7 +32,6 @@ abstract class CryptoDatabase : RoomDatabase(){
                    .build()
 
                INSTANCE = instance
-               //TODO INSTANCE = it might not work. check the DataBase.kt in gitbuh if this does not work
                return instance.also { INSTANCE = it }
            }
        }

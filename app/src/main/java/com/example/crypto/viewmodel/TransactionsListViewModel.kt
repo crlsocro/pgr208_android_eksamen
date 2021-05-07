@@ -21,9 +21,9 @@ class TransactionsListViewModel : ViewModel() {
 
 
     fun init(context: Context) {
-        // Initialize the database
+
         transactionDAO = CryptoDatabase.get(context).getTDAO()
-        // fetch the list of students available in database
+
         getData()
     }
 

@@ -19,9 +19,7 @@ class BalanceListViewModel : ViewModel() {
 
 
     fun init(context: Context) {
-        // Initialize the database
         balanceDAO = CryptoDatabase.get(context).getBDAO()
-        // fetch the list of students available in database
         getData()
     }
 

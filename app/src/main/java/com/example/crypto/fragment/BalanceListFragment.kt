@@ -23,18 +23,13 @@ class BalanceListFragment : Fragment(R.layout.activity_balance_list_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        // Init
         binding = ActivityBalanceListFragmentBinding.bind(view)
-        // Init view model
         viewModel.init(requireContext())
 
         configureList()
         observe()
-        // Listeners for view events
     }
 
-    //TODO if listlivedata is red, find out why
-    //Why is "it" red?
     private fun observe() {
         viewModel.balanceListLiveData.observe(viewLifecycleOwner) {
             adapter.setBalanceList(it)

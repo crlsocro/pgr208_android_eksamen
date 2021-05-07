@@ -15,8 +15,6 @@ import com.example.crypto.viewmodel.TransactionViewModel
 //Screen 1
 class MainActivity : AppCompatActivity() {
 
-    //TODO check if you have been given the gift already
-
     private lateinit var viewModelT: TransactionViewModel
     private lateinit var viewModelB: BalanceViewModel
     private lateinit var viewModel: MainViewModel

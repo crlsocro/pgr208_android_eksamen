@@ -32,9 +32,6 @@ class TransactionViewModel(context: Context) : ViewModel() {
         }
     }
 
-    //TODO this function operates the same as addCryptoTransaction. find out which is the best
-    //TODO add all variables we need to display a transaction
-    //Last three parameters does not have a "?", idk got error
     fun saveData(currency: String?, transactionType: String?, amount: Double, price: Double, transactionID: Int) {
         viewModelScope.launch {
             if (!currency.isNullOrEmpty() && !transactionType.isNullOrEmpty()) {
@@ -48,9 +45,6 @@ class TransactionViewModel(context: Context) : ViewModel() {
 
     }
 
-    //TODO change test to the name we use to insert or read from database
-    //Change both instances of "test"
-    //Bruk addCryptoTransaction for å legge til i databasen
     fun addCryptoTransaction (testT: Transaction){
         viewModelScope.launch {
             withContext(Dispatchers.IO){
@@ -58,8 +52,6 @@ class TransactionViewModel(context: Context) : ViewModel() {
             }
         }
     }
-
-    //TODO add this function when copying this to balance
 
     fun updateData(currency: String?, transactionType: String?, amount: Double, price: Double, transactionID: Int) {
         viewModelScope.launch {

@@ -27,8 +27,6 @@ class BuySellActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_buy_sell)
 
-       // setSupportActionBar(findViewById(R.id.toolbar))
-
         drawSinGraph();
 
             var intent = intent

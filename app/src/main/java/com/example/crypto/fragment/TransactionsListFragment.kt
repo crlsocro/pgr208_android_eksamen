@@ -17,8 +17,6 @@ class TransactionsListFragment : Fragment(R.layout.transactions_list_fragment) {
         fun newInstance() = TransactionsListFragment()
     }
 
-    //TODO remove from this function from this file after adding to balance, if possible
-    //TODO changed the newInstance
     private val adapter = TransactionsAdapter {}
     private lateinit var binding: TransactionsListFragmentBinding
     private val viewModel: TransactionsListViewModel by viewModels()
@@ -35,8 +33,6 @@ class TransactionsListFragment : Fragment(R.layout.transactions_list_fragment) {
         // Listeners for view events
     }
 
-    //TODO if listlivedata is red, find out why
-    //Why is "it" red?
     private fun observe() {
         viewModel.transactionsListLiveData.observe(viewLifecycleOwner) {
             adapter.setTransactionList(it)
