@@ -14,9 +14,9 @@ class PortfolioAdapter (val lambdaFunction: (Balance) -> Unit) : RecyclerView.Ad
 
     class ViewHolder(val binding: ItemPortfolioViewBinding) : RecyclerView.ViewHolder(binding.root){
         fun bind(balance: Balance){
-            binding.textViewCryptoNameBalance.text = balance.balanceID.toString()
-            binding.textViewCryptoSymbolBalance.text = balance.balanceID.toString()
-            binding.textViewCryptoPriceUsdBalance.text = balance.balanceID.toString()
+            binding.textViewCryptoNameBalance.text = balance.currency.toString()
+            binding.textViewCryptoSymbolBalance.text = balance.amount.toString()
+            binding.textViewCryptoPriceUsdBalance.text = balance.price.toString()
             Picasso.get().load("https://static.coincap.io/assets/icons/${balance.currency!!.toLowerCase()}@2x.png").into(binding.imageViewIconBalance)
         }
     }

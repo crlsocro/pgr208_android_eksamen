@@ -79,7 +79,6 @@ class BuyActivity : AppCompatActivity() {
 
             override fun afterTextChanged(s: Editable?) {
                 if (price != null) {
-                    //println(editTextUSDPrice.text.toString())
                     var commaless = price.replace(",", ".")
                     textViewBTCPrice.text = (editTextUSDPrice.text.toString().toDouble() / commaless.toDouble()).toString()
                 }
@@ -104,7 +103,7 @@ class BuyActivity : AppCompatActivity() {
         try{
             viewModelB.getBalanceCoin(symbol)
 
-            if (viewModelB.theCoin.currency == symbol){
+            if (viewModelB.getCoin(symbol).currency == symbol){
                 println("Hello coins")
                 testB.amount += viewModelB.theCoin?.amount
             }else{
