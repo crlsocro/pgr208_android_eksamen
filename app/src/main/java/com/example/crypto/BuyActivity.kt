@@ -25,7 +25,6 @@ import kotlinx.coroutines.withContext
 
 //Screen 5
 //TODO Buttons are only enabled when the user has enough crypto to buy/sell
-//TODO: When entering in the USD column, for example 3000, it should convert to the BTC value automatically.
 
 class BuyActivity : AppCompatActivity() {
 
@@ -38,22 +37,19 @@ class BuyActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(com.example.crypto.R.layout.activity_buy)
 /*
-        var btn : Button = findViewById(com.example.crypto.R.id.buyButton)
+        var btn : Button = findViewById(R.id.buyButton)
         btn.isEnabled = false
 
         var usdEdit : EditText = findViewById<EditText>(com.example.crypto.R.id.editTextUSD)
         if (Integer.parseInt(usdEdit.text.toString()) > 5 || usdEdit.text.toString() == ""){
             btn.isEnabled = true
         }
+
+
 */
         //TODO verify the input before submitting to database. i.e if(value != String)
-        //TODO maybe clean up code by making a collectAllData function?
-        //TODO the crypto amount should be textview, not editable by user
-        //TODO the crypto amount should be calculated automatically
-        //TODO crypto with long "symbol" gets wrapped, extend name and name2
 
-        //FIXED: the user interface always says "BTC" under the USD, not the actual crypto
-        //FIXED: the crypto image always shows bitcoin image, not the actual crypto image
+
 
         var intent = intent
         symbol = intent.getStringExtra("symbol").toString()

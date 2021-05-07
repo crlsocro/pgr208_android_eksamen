@@ -21,12 +21,16 @@ class MainActivity : AppCompatActivity() {
     private lateinit var viewModelB: BalanceViewModel
     private lateinit var viewModel: MainViewModel
 
+    var USDCoin : Coin = Coin("USD", "US Dollar", 10000.0)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         viewModelT = TransactionViewModel(this)
         viewModelB = BalanceViewModel(this)
+
+
 
         var firstDepositT = Transaction(0, "USD", 10000.0, 1.0, "gift")
         viewModelT.addCryptoTransaction(firstDepositT)
@@ -37,8 +41,6 @@ class MainActivity : AppCompatActivity() {
         object : CountDownTimer(3000, 1000) {
 
             override fun onTick(millisUntilFinished: Long) {
-                //TODO Unødvendig method, men må vær her. FJERN? or EPIC???
-                print("Hello");
             }
 
             override fun onFinish() {
